@@ -38,7 +38,7 @@
 
 html {
     height: 100%;
-    background: #0D0D0D !important;
+    background: #0D0D0D;
 }
 
 body {
@@ -58,7 +58,7 @@ body {
 main {
     margin: 0;
     padding: 0;
-    margin-bottom: 0 !important;
+    margin-bottom: 0;
     background: var(--gradient-main);
     flex: 1 0 auto;
 }
@@ -660,7 +660,7 @@ header.scrolled {
     background: var(--gradient-main);
     padding: 50px 20px;
     position: relative;
-    margin-top: -150px !important;
+    margin-top: -150px ;
     z-index: 10;
     box-shadow: 0 5px 30px rgba(0, 0, 0, 0.5);
     overflow: hidden;
@@ -867,78 +867,78 @@ header.scrolled {
     
     /* Gallery Preview - Reduce height and padding on mobile */
     .gallery-preview {
-        padding: 60px 20px 80px !important;
+        padding: 60px 20px 80px ;
     }
     
     .gallery-preview .section-header {
-        margin-bottom: 20px !important;
+        margin-bottom: 20px ;
     }
     
     .gallery-preview .section-header h2 {
-        font-size: 32px !important;
-        margin-bottom: 10px !important;
+        font-size: 32px ;
+        margin-bottom: 10px ;
     }
     
     .gallery-preview .section-header p {
-        font-size: 14px !important;
-        margin-bottom: 0 !important;
+        font-size: 14px ;
+        margin-bottom: 0 ;
     }
     
     .slider {
-        height: 45vh !important;
-        min-height: 350px !important;
-        margin-bottom: 0 !important;
+        height: 45vh ;
+        min-height: 350px ;
+        margin-bottom: 0 ;
     }
     
     /* Gallery Slider - Position content at bottom left on mobile */
     .slider .list .item .content {
-        bottom: 80px !important;
-        left: 15px !important;
-        right: auto !important;
-        width: 75% !important;
-        max-width: 75% !important;
+        bottom: 80px ;
+        left: 15px ;
+        right: auto ;
+        width: 75% ;
+        max-width: 75% ;
         text-align: left;
     }
     
     .slider .list .item .content h2 {
-        font-size: 28px !important;
+        font-size: 28px ;
         margin: 10px 0;
     }
     
     .slider .list .item .content p:nth-child(1) {
-        font-size: 12px !important;
+        font-size: 12px ;
         letter-spacing: 5px;
     }
     
     .slider .list .item .content p:nth-child(3) {
-        font-size: 14px !important;
+        font-size: 14px ;
         line-height: 1.4;
         max-width: 100%;
     }
     
     .slider .list .item::after {
-        height: 50% !important;
-        background: linear-gradient(to top, rgba(0,0,0,0.95) 0%, rgba(0,0,0,0.8) 50%, transparent 100%) !important;
+        height: 50% ;
+        background: linear-gradient(to top, rgba(0,0,0,0.95) 0%, rgba(0,0,0,0.8) 50%, transparent 100%) ;
     }
     
     .thumbnail {
-        bottom: 10px !important;
+        bottom: 10px ;
         gap: 5px;
         padding: 0 10px;
     }
     
     /* Position arrows at right center on mobile */
     .arrows {
-        right: 15px !important;
-        top: 50% !important;
-        transform: translateY(-50%) !important;
+        right: 15px ;
+        top: 50% ;
+        transform: translateY(-50%) ;
     }
     
     .arrows button {
-        width: 40px !important;
-        height: 40px !important;
-        font-size: 16px !important;
-        background: rgba(46, 95, 141, 0.8) !important;
+        width: 40px ;
+        height: 40px ;
+        font-size: 16px ;
+        background: rgba(46, 95, 141, 0.8) ;
         backdrop-filter: blur(5px);
     }
     
@@ -1596,18 +1596,18 @@ header.scrolled {
 
 @media (max-width: 480px) {
     .thumbnail {
-        display: none !important; /* Hide thumbnails on very small screens */
+        display: none ; /* Hide thumbnails on very small screens */
     }
 }
 
 /* Gallery Preview adjustments for larger screens */
 @media (min-width: 1200px) {
     .gallery-preview {
-        padding: 90px 20px 140px !important;
+        padding: 90px 20px 140px ;
     }
     
     .slider {
-        height: 65vh !important;
+        height: 65vh ;
         max-height: 750px;
     }
     
@@ -1618,11 +1618,11 @@ header.scrolled {
 
 @media (min-width: 1440px) {
     .gallery-preview {
-        padding: 85px 20px 130px !important;
+        padding: 85px 20px 130px ;
     }
     
     .slider {
-        height: 62vh !important;
+        height: 62vh ;
         max-height: 720px;
     }
 }
@@ -1831,8 +1831,8 @@ header.scrolled {
     }
     
     .team-card.active-mobile .team-description {
-        opacity: 1 !important;
-        transform: translateY(0) !important;
+        opacity: 1 ;
+        transform: translateY(0) ;
     }
     
     .team-card {
@@ -2528,29 +2528,29 @@ header.scrolled {
 }
 
 input[type="color"] {
-    -webkit-appearance: none !important;
-    appearance: none !important;
-    width: 80px !important;
-    height: 80px !important;
-    border-radius: 10px !important;
-    border: 2px solid rgba(255, 255, 255, 0.2) !important;
-    cursor: pointer !important;
-    background: transparent !important;
-    padding: 0 !important;
+    -webkit-appearance: none ;
+    appearance: none ;
+    width: 80px ;
+    height: 80px ;
+    border-radius: 10px ;
+    border: 2px solid rgba(255, 255, 255, 0.2) ;
+    cursor: pointer ;
+    background: transparent ;
+    padding: 0 ;
 }
 
 input[type="color"]::-webkit-color-swatch-wrapper {
-    padding: 5px !important;
+    padding: 5px ;
 }
 
 input[type="color"]::-webkit-color-swatch {
-    border-radius: 8px !important;
-    border: none !important;
+    border-radius: 8px ;
+    border: none ;
 }
 
 input[type="color"]::-moz-color-swatch {
-    border-radius: 8px !important;
-    border: none !important;
+    border-radius: 8px ;
+    border: none ;
 }
 
 /* ==========================================================================
@@ -2563,7 +2563,7 @@ input[type="color"]::-moz-color-swatch {
     position: relative;
     overflow: hidden;
     border-top: 1px solid rgba(255, 255, 255, 0.05);
-    margin-bottom: 0 !important;
+    margin-bottom: 0 ;
 }
 
 .cta-section::before {
@@ -2678,7 +2678,7 @@ input[type="color"]::-moz-color-swatch {
     overflow: hidden;
     background: #0D0D0D;
     border-top: 1px solid rgba(255, 255, 255, 0.05);
-    margin: 0 !important;
+    margin: 0 ;
     padding: 0;
     margin-left: calc(-50vw + 50%);
 }
@@ -2831,14 +2831,14 @@ input[type="color"]::-moz-color-swatch {
    ========================================================================== */
 
 footer {
-    background: var(--gradient-main) !important;
+    background: var(--gradient-main) ;
     color: white;
-    padding: 50px 20px 30px !important;
+    padding: 50px 20px 30px ;
     min-height: 350px;
     position: relative;
     border-top: 1px solid rgba(255, 255, 255, 0.08);
-    margin: 0 !important;
-    margin-bottom: 0 !important;
+    margin: 0 ;
+    margin-bottom: 0 ;
     flex-shrink: 0;
     display: flex;
     flex-direction: column;
@@ -2883,20 +2883,20 @@ footer::after {
 .footer-section:first-child {
     display: flex;
     flex-direction: column;
-    align-items: center !important;
-    text-align: center !important;
+    align-items: center ;
+    text-align: center ;
     justify-content: center;
 }
 
 .footer-section:first-child * {
-    text-align: center !important;
+    text-align: center ;
 }
 
 .footer-company {
     display: flex;
     flex-direction: column;
-    align-items: center !important;
-    justify-content: center !important;
+    align-items: center ;
+    justify-content: center ;
     gap: 20px; /* Increased gap */
     margin-bottom: 40px; /* Increased margin */
     width: 100%;
@@ -3003,7 +3003,7 @@ footer::after {
 
 .footer-section a[href^="tel:"]:hover,
 .footer-section a[href^="mailto:"]:hover {
-    color: white !important;
+    color: white ;
     text-decoration: underline;
 }
 
@@ -3018,7 +3018,7 @@ footer::after {
     gap: 30px; /* Increased gap */
     margin-top: 10px; /* Increased margin */
     margin-bottom: 20px;
-    justify-content: center !important;
+    justify-content: center ;
     align-items: center;
     width: 100%;
     padding: 20px;
@@ -3061,7 +3061,7 @@ footer::after {
 .footer-bottom {
     padding: 25px 20px 20px; /* Reduced padding */
     margin-top: auto;
-    margin-bottom: 0 !important;
+    margin-bottom: 0 ;
     border-top: 1px solid rgba(255, 255, 255, 0.05);
     text-align: center;
     color: rgba(255, 255, 255, 0.4);
@@ -3072,12 +3072,92 @@ footer::after {
 
 .footer-bottom::before,
 .footer-bottom::after {
-    display: none !important;
-    content: none !important;
+    display: none ;
+    content: none ;
 }
 
 /* ==========================================================================
-   16. UTILITY CLASSES
+   16. VIDEO CONTROLS STYLES
+   ========================================================================== */
+
+.video-controls-container {
+    position: absolute;
+    bottom: 70px;
+    left: 20px;
+    right: 20px;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: 3;
+}
+
+.video-controls-container.visible {
+    opacity: 1;
+}
+
+.video-progress-bar {
+    position: relative;
+    width: 100%;
+    height: 6px;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 3px;
+    cursor: pointer;
+    margin-bottom: 10px;
+    overflow: visible;
+}
+
+.video-progress-filled {
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    background: var(--primary);
+    border-radius: 3px;
+    transition: width 0.1s linear;
+    pointer-events: none;
+}
+
+.video-progress-handle {
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 14px;
+    height: 14px;
+    background: white;
+    border-radius: 50%;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+    cursor: grab;
+    transition: transform 0.2s ease;
+}
+
+.video-progress-handle:hover {
+    transform: translate(-50%, -50%) scale(1.2);
+}
+
+.video-progress-handle:active {
+    cursor: grabbing;
+    transform: translate(-50%, -50%) scale(1.1);
+}
+
+.video-time {
+    color: white;
+    font-size: 12px;
+    font-weight: 500;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
+    display: flex;
+    gap: 5px;
+}
+
+.hero-video-wrapper:hover .video-controls-container {
+    opacity: 1;
+}
+
+/* Adjust video control button position */
+.video-control {
+    bottom: 20px;
+}
+
+/* ==========================================================================
+   17. UTILITY CLASSES
    ========================================================================== */
 
 .section-header {
@@ -3131,11 +3211,11 @@ footer::after {
 /* Tablet screens (768px to 1024px) - Show 6 service cards */
 @media (min-width: 768px) and (max-width: 1024px) {
     .service-card.large-screen-only:nth-child(6) {
-        display: block !important;
+        display: block ;
     }
     
     .services-grid {
-        grid-template-columns: repeat(3, 1fr) !important; /* 3 columns for 6 cards */
+        grid-template-columns: repeat(3, 1fr) ; /* 3 columns for 6 cards */
         gap: 20px;
     }
 }
@@ -3167,7 +3247,7 @@ footer::after {
         margin-right: 30px; /* Additional spacing after company section */
     }
     .service-card.large-screen-only {
-        display: block !important;
+        display: block ;
     }
     
     .services-grid {
@@ -3326,7 +3406,7 @@ footer::after {
 /* Specific adjustments for MacBook Air 13-inch (1440x900) */
 @media (max-width: 1440px) and (max-height: 900px) {
     .hero-content h1 {
-        font-size: 38px !important; /* Force smaller size for MacBook Air */
+        font-size: 38px ; /* Force smaller size for MacBook Air */
         line-height: 1.15;
     }
     
@@ -3336,12 +3416,12 @@ footer::after {
     }
     
     .hero-content .tagline {
-        font-size: 18px !important;
+        font-size: 18px ;
         margin-bottom: 15px;
     }
     
     .hero-content p {
-        font-size: 15px !important;
+        font-size: 15px ;
         margin-bottom: 20px;
     }
     
@@ -3388,11 +3468,11 @@ footer::after {
     .hero-container {
         grid-template-columns: 1fr;
         text-align: center;
-        padding: 40px 20px 100px !important;
+        padding: 40px 20px 100px ;
     }
     
     .hero-section {
-        min-height: 80vh !important;
+        min-height: 80vh ;
     }
     
     .hero-content h1 {
@@ -3435,7 +3515,7 @@ footer::after {
     }
     
     .footer-about p {
-        text-align: center !important;
+        text-align: center ;
         max-width: 600px;
         margin: 0 auto;
     }
@@ -3474,7 +3554,7 @@ footer::after {
     }
     
     .trust-section {
-        margin-top: -100px !important;
+        margin-top: -100px ;
         padding: 40px 15px;
     }
     
@@ -3502,32 +3582,32 @@ footer::after {
     .color-option.desktop-show,
     .color-option.large-desktop-show,
     .color-option.xl-desktop-show {
-        display: none !important;
+        display: none ;
     }
     
     html, body {
-        background: #0D0D0D !important;
+        background: #0D0D0D ;
     }
     
     footer {
-        margin-bottom: 0 !important;
+        margin-bottom: 0 ;
     }
     
     .carousel-gallery {
         height: 350px;
-        margin-bottom: 0 !important;
+        margin-bottom: 0 ;
     }
     
     .hero-section {
-        min-height: 80vh !important;
+        min-height: 80vh ;
     }
     
     .hero-container {
-        padding: 40px 20px 80px !important;
+        padding: 40px 20px 80px ;
     }
     
     .trust-section {
-        margin-top: -80px !important;
+        margin-top: -80px ;
         padding: 35px 15px;
     }
     
@@ -3673,7 +3753,7 @@ footer::after {
     }
     
     .footer-section h3::after {
-        left: 50% !important;
+        left: 50% ;
         transform: translateX(-50%);
     }
     
@@ -3764,29 +3844,29 @@ footer::after {
 
 @media (max-width: 480px) {
     html, body {
-        background: #0D0D0D !important;
+        background: #0D0D0D ;
     }
     
     footer {
-        margin-bottom: 0 !important;
-        padding-bottom: 20px !important;
+        margin-bottom: 0 ;
+        padding-bottom: 20px ;
     }
     
     .carousel-gallery {
         height: 300px;
-        margin-bottom: 0 !important;
+        margin-bottom: 0 ;
     }
     
     .hero-section {
-        min-height: 70vh !important;
+        min-height: 70vh ;
     }
     
     .hero-container {
-        padding: 30px 15px 70px !important;
+        padding: 30px 15px 70px ;
     }
     
     .trust-section {
-        margin-top: -70px !important;
+        margin-top: -70px ;
         padding: 30px 10px;
     }
     
@@ -3856,7 +3936,7 @@ footer::after {
     
     .testimonials-nav button {
         position: relative;
-        margin: 0 !important;
+        margin: 0 ;
         width: 45px;
         height: 45px;
     }
@@ -3876,27 +3956,27 @@ footer::after {
     .color-option.desktop-show,
     .color-option.large-desktop-show,
     .color-option.xl-desktop-show {
-        display: none !important;
+        display: none ;
     }
     
     .custom-color-section {
-        flex-direction: column !important;
-        gap: 15px !important;
-        padding: 15px !important;
+        flex-direction: column ;
+        gap: 15px ;
+        padding: 15px ;
     }
     
     .custom-color-section span:first-child {
-        font-size: 12px !important;
+        font-size: 12px ;
     }
     
     .custom-color-section input[type="color"] {
-        width: 60px !important;
-        height: 60px !important;
+        width: 60px ;
+        height: 60px ;
     }
     
     .custom-color-section #customColorValue {
-        font-size: 12px !important;
-        padding: 8px 15px !important;
+        font-size: 12px ;
+        padding: 8px 15px ;
     }
     
     .team-image {
@@ -3961,7 +4041,7 @@ body.menu-open {
 }
 
 .mobile-menu-btn.active span {
-    background: white !important;
+    background: white ;
 }
 
 .mobile-menu-btn span {
@@ -3983,7 +4063,7 @@ body.menu-open {
         transition: right 0.3s ease;
         overflow-y: auto;
         box-shadow: -5px 0 20px rgba(0, 0, 0, 0.5);
-        display: flex !important;
+        display: flex ;
         flex-direction: column;
         padding: 100px 30px 30px;
     }
@@ -4098,7 +4178,7 @@ body.menu-open {
 
 /* Ensure header stays on top */
 header {
-    z-index: 1000 !important;
+    z-index: 1000 ;
 }
 
 /* Fix header button positioning on mobile */
@@ -4187,22 +4267,22 @@ header {
    ========================================================================== */
 
 html, body {
-    background: #0D0D0D !important;
-    margin: 0 !important;
-    padding: 0 !important;
+    background: #0D0D0D ;
+    margin: 0 ;
+    padding: 0 ;
 }
 
 body > *:last-child {
-    margin-bottom: 0 !important;
+    margin-bottom: 0 ;
 }
 
 body > footer {
-    margin-bottom: 0 !important;
-    padding-bottom: 30px !important;
+    margin-bottom: 0 ;
+    padding-bottom: 30px ;
 }
 
 body > footer ~ * {
-    display: none !important;
+    display: none ;
 }
 /* ==========================================================================
    HORIZONTAL SCROLL FIX - Add this to your styles.css file
@@ -4210,62 +4290,62 @@ body > footer ~ * {
 
 /* MAIN FIX - Prevent horizontal overflow on body and html */
 html {
-    overflow-x: hidden !important;
-    max-width: 100% !important;
-    position: relative !important;
+    overflow-x: hidden ;
+    max-width: 100% ;
+    position: relative ;
 }
 
 body {
-    overflow-x: hidden !important;
-    max-width: 100% !important;
-    position: relative !important;
+    overflow-x: hidden ;
+    max-width: 100% ;
+    position: relative ;
 }
 
 /* Ensure main wrapper doesn't cause overflow */
 main {
-    overflow-x: hidden !important;
-    max-width: 100% !important;
+    overflow-x: hidden ;
+    max-width: 100% ;
 }
 
 /* Fix floating shapes from causing overflow */
 .floating-shapes {
-    overflow: hidden !important;
-    max-width: 100vw !important;
-    position: fixed !important; /* Keep it fixed */
-    left: 0 !important;
-    right: 0 !important;
+    overflow: hidden ;
+    max-width: 100vw ;
+    position: fixed ; /* Keep it fixed */
+    left: 0 ;
+    right: 0 ;
     pointer-events: none;
 }
 
 /* Ensure shapes don't extend beyond viewport */
 .shape {
-    max-width: 100% !important;
+    max-width: 100% ;
 }
 
 /* Fix shapes that start off-screen */
 .shape:nth-child(1) {
-    left: 0 !important; /* Changed from -5% */
+    left: 0 ; /* Changed from -5% */
     transform-origin: center;
 }
 
 .shape:nth-child(2) {
-    right: 0 !important; /* Changed from -5% */
+    right: 0 ; /* Changed from -5% */
     transform-origin: center;
 }
 
 /* Fix decorative elements */
 .decorative-element {
-    overflow: hidden !important;
+    overflow: hidden ;
 }
 
 .decorative-element.left {
-    left: 0 !important;
-    max-width: 100px !important;
+    left: 0 ;
+    max-width: 100px ;
 }
 
 .decorative-element.right {
-    right: 0 !important;
-    max-width: 100px !important;
+    right: 0 ;
+    max-width: 100px ;
 }
 
 /* Fix mobile menu container when hidden */
@@ -4283,7 +4363,7 @@ main {
         transform: translateX(100%); /* Start off-screen */
         overflow-y: auto;
         box-shadow: -5px 0 20px rgba(0, 0, 0, 0.5);
-        display: flex !important;
+        display: flex ;
         flex-direction: column;
         padding: 100px 30px 30px;
     }
@@ -4296,85 +4376,85 @@ main {
 
 /* Ensure all sections don't overflow */
 section {
-    overflow-x: hidden !important;
-    max-width: 100% !important;
+    overflow-x: hidden ;
+    max-width: 100% ;
 }
 
 /* Fix hero section */
 .hero-section {
-    overflow: hidden !important;
-    max-width: 100% !important;
+    overflow: hidden ;
+    max-width: 100% ;
 }
 
 .hero-container {
-    max-width: 100% !important;
-    overflow: hidden !important;
+    max-width: 100% ;
+    overflow: hidden ;
 }
 
 /* Fix any absolute positioned elements in hero */
 .hero-badge {
-    right: 20px !important;
-    max-width: calc(100% - 40px) !important;
+    right: 20px ;
+    max-width: calc(100% - 40px) ;
 }
 
 /* Fix trust section badges on mobile */
 @media (max-width: 768px) {
     .trust-container {
-        max-width: 100% !important;
-        overflow-x: hidden !important;
+        max-width: 100% ;
+        overflow-x: hidden ;
     }
     
     .trust-badge {
-        max-width: 100% !important;
+        max-width: 100% ;
     }
     
     /* Make hero badge (star rating) smaller on mobile */
     .hero-badge {
-        padding: 10px 15px !important;
-        font-size: 0.9rem !important;
-        top: 15px !important;
-        right: 15px !important;
+        padding: 10px 15px ;
+        font-size: 0.9rem ;
+        top: 15px ;
+        right: 15px ;
     }
 }
 
 /* Make hero badge even smaller on very small screens */
 @media (max-width: 480px) {
     .hero-badge {
-        padding: 8px 12px !important;
-        font-size: 0.8rem !important;
-        top: 10px !important;
-        right: 10px !important;
-        border-radius: 20px !important;
+        padding: 8px 12px ;
+        font-size: 0.8rem ;
+        top: 10px ;
+        right: 10px ;
+        border-radius: 20px ;
     }
 }
 
 /* Fix carousel that might cause overflow */
 .carousel-gallery {
-    overflow: hidden !important;
-    max-width: 100% !important;
+    overflow: hidden ;
+    max-width: 100% ;
 }
 
 /* Ensure CTA section connects properly with carousel */
 .cta-section {
-    padding-top: 60px !important;
-    background: linear-gradient(135deg, #0D0D0D 0%, #1A1A1A 50%, #1A2C3D 100%) !important;
-    margin-top: -1px !important;
+    padding-top: 60px ;
+    background: linear-gradient(135deg, #0D0D0D 0%, #1A1A1A 50%, #1A2C3D 100%) ;
+    margin-top: -1px ;
 }
 
 /* Remove any gaps between carousel and footer */
 .carousel-gallery + * {
-    margin-top: 0 !important;
+    margin-top: 0 ;
 }
 
 .carousel-track {
     /* Ensure carousel doesn't cause horizontal scroll */
-    overflow: hidden !important;
+    overflow: hidden ;
 }
 
 /* Fix process steps on mobile */
 @media (max-width: 768px) {
     .process-step::after {
-        display: none !important; /* Remove connecting lines on mobile */
+        display: none ; /* Remove connecting lines on mobile */
     }
     
     .process-section {
@@ -4460,73 +4540,73 @@ section {
 
 /* Fix gallery slider */
 .slider {
-    overflow: hidden !important;
-    max-width: 100% !important;
+    overflow: hidden ;
+    max-width: 100% ;
 }
 
 /* Arrows positioning handled above */
 
 /* Fix team carousel */
 .team-carousel-container {
-    overflow: hidden !important;
-    max-width: 100% !important;
+    overflow: hidden ;
+    max-width: 100% ;
 }
 
 @media (max-width: 768px) {
     .team-carousel-container {
-        padding: 0 50px !important; /* Reduce padding on mobile */
+        padding: 0 50px ; /* Reduce padding on mobile */
     }
     
     .team-nav.prev {
-        left: 5px !important;
+        left: 5px ;
     }
     
     .team-nav.next {
-        right: 5px !important;
+        right: 5px ;
     }
 }
 
 /* Fix testimonials carousel */
 .testimonials-carousel {
-    overflow: hidden !important;
-    max-width: 100% !important;
+    overflow: hidden ;
+    max-width: 100% ;
 }
 
 @media (max-width: 768px) {
     .testimonials-carousel {
-        padding: 0 50px !important; /* Reduce padding */
+        padding: 0 50px ; /* Reduce padding */
     }
     
     .testimonials-nav {
-        width: 100% !important;
-        left: 0 !important;
+        width: 100% ;
+        left: 0 ;
     }
 }
 
 /* Additional viewport fix for all devices */
 * {
-    max-width: 100vw !important;
+    max-width: 100vw ;
 }
 
 /* Footer scrolling fix */
 footer {
-    overflow: hidden !important;
+    overflow: hidden ;
     position: relative;
 }
 
 .footer-content {
-    overflow: hidden !important;
-    max-width: 100vw !important;
+    overflow: hidden ;
+    max-width: 100vw ;
 }
 
 .footer-section {
-    overflow: hidden !important;
+    overflow: hidden ;
 }
 
 /* Prevent horizontal scroll on footer social icons */
 .footer-social {
-    overflow: hidden !important;
-    max-width: 100% !important;
+    overflow: hidden ;
+    max-width: 100% ;
 }
 
 /* Re-add controlled shadows */
@@ -4536,47 +4616,47 @@ footer {
 .team-card:hover,
 .testimonial-card,
 .slider {
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3) !important;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3) ;
 }
 
 /* Ensure footer doesn't cause overflow */
 footer {
-    overflow-x: hidden !important;
-    max-width: 100% !important;
+    overflow-x: hidden ;
+    max-width: 100% ;
 }
 
 .footer-content {
-    max-width: 100% !important;
-    overflow: hidden !important;
+    max-width: 100% ;
+    overflow: hidden ;
 }
 
 /* Map section fix */
 .map-section {
-    overflow: hidden !important;
-    max-width: 100% !important;
+    overflow: hidden ;
+    max-width: 100% ;
 }
 
 .map-container {
-    max-width: 100% !important;
+    max-width: 100% ;
 }
 
 /* Final safety net - hide any horizontal scrollbar */
 ::-webkit-scrollbar-horizontal {
-    display: none !important;
+    display: none ;
 }
 
 /* For Firefox */
 * {
-    scrollbar-width: none !important; /* For horizontal scrollbar */
+    scrollbar-width: none ; /* For horizontal scrollbar */
 }
 
 /* Emergency fix if still having issues */
 #top {
-    overflow-x: hidden !important;
-    max-width: 100vw !important;
+    overflow-x: hidden ;
+    max-width: 100vw ;
 }
 
 .header-content {
-    max-width: 100% !important;
-    overflow: hidden !important;
+    max-width: 100% ;
+    overflow: hidden ;
 }
