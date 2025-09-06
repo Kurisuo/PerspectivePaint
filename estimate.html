@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Get a free painting estimate from Perspective Paint & Design. Professional painting services in San Diego. Call (619) 818-4816">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Link to external CSS file -->
+    <link rel="stylesheet" href="styles.css">
+    
+    <title>Free Estimate - Perspective Paint & Design | San Diego Painting Services</title>
+    
+    <style>
+/* Dark Theme Styles */
+body {
+    background: #0D0D0D;
+    color: white;
+}
+
+/* Estimate Hero */
+.estimate-hero {
+    background: linear-gradient(135deg, #0D0D0D 0%, #1A1A1A 50%, #1A2C3D 100%);
+    padding: 140px 20px 80px;
+    text-align: center;
+    color: white;
+    position: relative;
+    overflow: hidden;
+    margin-top: 80px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.estimate-hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('media/team-photo.jpg') center/cover;
+    opacity: 0.1;
+    z-index: 1;
+}
+
+.estimate-hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.estimate-hero h1 {
+    font-size: 48px;
+    margin-bottom: 20px;
+    font-weight: 800;
+    text-transform: uppercase;
+}
+
+.estimate-hero p {
+    font-size: 20px;
+    margin-bottom: 30px;
+    opacity: 0.9;
+}
+
+.btn-estimate {
+    background: rgba(46, 95, 141, 0.9);
+    color: white;
+    padding: 16px 36px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    text-transform: uppercase;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+}
+
+.btn-estimate:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.5);
+    background: rgba(46, 95, 141, 1);
+}
+
+/* Benefits Section */
+.benefits-section {
+    padding: 80px 20px;
+    background: linear-gradient(135deg, #0D0D0D 0%, #1A1A1A 50%, #1A2C3D 100%);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.benefits-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.benefits-header {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.benefits-header h2 {
+    font-size: 42px;
+    color: white;
+    margin-bottom: 15px;
+    font-weight: 800;
+    text-transform: uppercase;
+}
+
+.benefits-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.benefit-card {
+    background: rgba(26, 26, 26, 0.6);
+    padding: 40px 30px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    transition: all 0.3s ease;
+    border: 1px solid rgba(46, 95, 141, 0.2);
+}
+
+.benefit-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.6);
+    background: rgba(26, 26, 26, 0.8);
+    border-color: rgba(46, 95, 141, 0.4);
+}
+
+.benefit-icon {
+    width: 80px;
+    height: 80px;
+    background: rgba(46, 95, 141, 0.9);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 20px;
+    font-size: 32px;
+    color: white;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.benefit-card h3 {
+    font-size: 24px;
+    color: white;
+    margin-bottom: 15px;
+    font-weight: 700;
+}
+
+.benefit-card p {
+    color: rgba(255, 255, 255, 0.7);
+    line-height: 1.6;
+}
+
+/* Quick Contact Section */
+.quick-contact-section {
+    padding: 80px 20px;
+    background: linear-gradient(135deg, #0D0D0D 0%, #1A1A1A 50%, #1A2C3D 100%);
+    text-align: center;
+}
+
+.quick-contact-container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.quick-contact-container h2 {
+    font-size: 42px;
+    color: white;
+    margin-bottom: 20px;
+    font-weight: 800;
+    text-transform: uppercase;
+}
+
+.quick-contact-container p {
+    font-size: 18px;
+    color: rgba(255, 255, 255, 0.7);
+    margin-bottom: 40px;
+}
+
+.contact-options {
+    display: flex;
+    gap: 30px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.contact-option {
+    background: rgba(26, 26, 26, 0.8);
+    padding: 30px;
+    border-radius: 10px;
+    text-align: center;
+    min-width: 250px;
+    border: 1px solid rgba(46, 95, 141, 0.2);
+    transition: all 0.3s ease;
+}
+
+.contact-option:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.6);
+    background: rgba(26, 26, 26, 0.9);
+    border-color: rgba(46, 95, 141, 0.4);
+}
+
+.contact-option i {
+    font-size: 48px;
+    color: rgba(46, 95, 141, 0.9);
+    margin-bottom: 20px;
+}
+
+.contact-option h3 {
+    font-size: 20px;
+    color: white;
+    margin-bottom: 10px;
+}
+
+.contact-option a {
+    color: rgba(46, 95, 141, 0.9);
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 18px;
+    transition: all 0.3s ease;
+}
+
+.contact-option a:hover {
+    color: white;
+}
+
+.contact-option p {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .estimate-hero h1 {
+        font-size: 36px;
+    }
+    
+    .benefits-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .contact-options {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .estimate-hero h1 {
+        font-size: 28px;
+    }
+}
+    </style>
+</head>
+
+<body>
+    <header id="header">
+        <div class="header-content">
+            <a href="index.html" class="main-logo" id="logoLink">
+                <img src="media/perspective-logo-old.png" alt="Perspective Paint & Design Logo">
+                <div class="company-name">
+                    <span class="perspective">PERSPECTIVE</span>
+                    <span class="painting">PAINT & DESIGN</span>
+                </div>
+            </a>
+            
+            <nav class="nav-container">
+                <div class="nav-menu">
+                    <a href="index.html#about" class="nav-link">About</a>
+                    <a href="index.html#services" class="nav-link">Services</a>
+                    <a href="gallery.html" class="nav-link">Gallery</a>
+                    <a href="index.html#team" class="nav-link">Team</a>
+                    <a href="index.html#testimonials" class="nav-link">Reviews</a>
+                    <a href="contact.html" class="nav-link">Contact</a>
+                </div>
+                <div class="header-cta-buttons">
+                    <a href="tel:6198184816" class="phone-btn">
+                        <i class="fa-solid fa-phone"></i> (619) 818-4816
+                    </a>
+                    <a href="contact.html#estimate" class="quote-btn">FREE ESTIMATE</a>
+                </div>
+            </nav>
+            
+            <button class="mobile-menu-btn">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </header>
+
+    <main>
+        <section class="estimate-hero">
+            <div class="estimate-hero-content">
+                <h1>Get Your Free Estimate</h1>
+                <p>Professional painting services tailored to your needs and budget</p>
+                <a href="contact.html#estimate" class="btn-estimate">
+                    <i class="fa-solid fa-calculator"></i> Start Your Estimate
+                </a>
+            </div>
+        </section>
+
+        <section class="benefits-section">
+            <div class="benefits-container">
+                <div class="benefits-header">
+                    <h2>Why Choose Our Estimates?</h2>
+                </div>
+                
+                <div class="benefits-grid">
+                    <div class="benefit-card">
+                        <div class="benefit-icon">
+                            <i class="fa-solid fa-clock"></i>
+                        </div>
+                        <h3>Quick Response</h3>
+                        <p>We respond to all estimate requests within 24 hours, ensuring you get the information you need when you need it.</p>
+                    </div>
+                    
+                    <div class="benefit-card">
+                        <div class="benefit-icon">
+                            <i class="fa-solid fa-calculator"></i>
+                        </div>
+                        <h3>Detailed Quotes</h3>
+                        <p>Our estimates include itemized breakdowns of all costs, materials, and labor so you know exactly what you're paying for.</p>
+                    </div>
+                    
+                    <div class="benefit-card">
+                        <div class="benefit-icon">
+                            <i class="fa-solid fa-handshake"></i>
+                        </div>
+                        <h3>No Pressure</h3>
+                        <p>We provide honest, transparent estimates with no hidden fees or pressure to make immediate decisions.</p>
+                    </div>
+                    
+                    <div class="benefit-card">
+                        <div class="benefit-icon">
+                            <i class="fa-solid fa-shield-halved"></i>
+                        </div>
+                        <h3>Guaranteed Pricing</h3>
+                        <p>Our estimates are valid for 30 days, giving you time to review and make informed decisions about your project.</p>
+                    </div>
+                    
+                    <div class="benefit-card">
+                        <div class="benefit-icon">
+                            <i class="fa-solid fa-users"></i>
+                        </div>
+                        <h3>Expert Consultation</h3>
+                        <p>Our experienced team provides valuable insights and recommendations to help you achieve the best results.</p>
+                    </div>
+                    
+                    <div class="benefit-card">
+                        <div class="benefit-icon">
+                            <i class="fa-solid fa-award"></i>
+                        </div>
+                        <h3>Quality Assurance</h3>
+                        <p>Every estimate comes with our commitment to quality workmanship and customer satisfaction.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="quick-contact-section">
+            <div class="quick-contact-container">
+                <h2>Ready to Get Started?</h2>
+                <p>Choose the best way to connect with us for your free estimate</p>
+                
+                <div class="contact-options">
+                    <div class="contact-option">
+                        <i class="fa-solid fa-phone"></i>
+                        <h3>Call Us Now</h3>
+                        <a href="tel:6198184816">(619) 818-4816</a>
+                        <p>Speak directly with our team</p>
+                    </div>
+                    
+                    <div class="contact-option">
+                        <i class="fa-solid fa-envelope"></i>
+                        <h3>Email Us</h3>
+                        <a href="mailto:hall.jon12@gmail.com">Send Email</a>
+                        <p>Get a response within 24 hours</p>
+                    </div>
+                    
+                    <div class="contact-option">
+                        <i class="fa-solid fa-clipboard-list"></i>
+                        <h3>Online Form</h3>
+                        <a href="contact.html#estimate">Fill Out Form</a>
+                        <p>Quick and easy estimate request</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Link to external JavaScript file -->
+    <script src="script.js"></script>
+</body>
+</html>

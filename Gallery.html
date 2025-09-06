@@ -1,0 +1,2095 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Professional painting services serving San Diego Area and More. Interior, exterior, and commercial painting. Free estimates. Licensed & insured. Call (619) 818-4816">    
+
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <title>Gallery - Perspective Painting | San Diego Painting Portfolio</title>
+    
+    <style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --primary: #2E5F8D;
+    --secondary: #1A1A1A;
+    --accent: #4A90E2;
+    --dark: #000000;
+    --light-bg: #F5F5F5;
+    --soft-bg: #EEEEEE;
+    --white: #FFFFFF;
+    --gradient-warm: linear-gradient(135deg, #2E5F8D 0%, #1E3A5F 100%);
+    --gradient-dark: linear-gradient(135deg, #000000 0%, #1A1A1A 100%);
+    --gradient-main: linear-gradient(135deg, #0D0D0D 0%, #1A1A1A 50%, #1A2C3D 100%);
+    --shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    --shadow-lg: 0 15px 40px rgba(0, 0, 0, 0.15);
+    --shadow-blue: 0 10px 30px rgba(46, 95, 141, 0.3);
+    --transition: all 0.3s ease;
+}
+
+html {
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+    max-width: 100%;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: #0D0D0D;
+    min-height: 100vh;
+    overflow-x: hidden;
+    color: white;
+    line-height: 1.6;
+    max-width: 100vw;
+    position: relative;
+}
+
+* {
+    max-width: 100vw;
+    box-sizing: border-box;
+}
+
+/* Loading Screen */
+.loading-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--gradient-main);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    transition: opacity 0.5s ease;
+}
+
+.loading-screen.hidden {
+    opacity: 0;
+    pointer-events: none;
+}
+
+.loader {
+    width: 60px;
+    height: 60px;
+    border: 4px solid rgba(46, 95, 141, 0.2);
+    border-top: 4px solid var(--primary);
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Back to Top Button */
+.back-to-top {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 50px;
+    height: 50px;
+    background: rgba(46, 95, 141, 0.9);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 20px;
+    cursor: pointer;
+    opacity: 0;
+    visibility: hidden;
+    transition: var(--transition);
+    z-index: 1000;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.back-to-top.visible {
+    opacity: 1;
+    visibility: visible;
+}
+
+.back-to-top:hover {
+    background: rgba(46, 95, 141, 1);
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+}
+
+/* Header - matching main page dark theme */
+header {
+    background: linear-gradient(135deg, #0D0D0D 0%, #1A1A1A 50%, #2C1A1A 100%);
+    padding: 20px 0;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+    transition: var(--transition);
+    border-bottom: 1px solid rgba(46, 95, 141, 0.1);
+}
+
+header.scrolled {
+    padding: 15px 0;
+    box-shadow: 0 6px 30px rgba(0, 0, 0, 0.7);
+    background: linear-gradient(135deg, #0A0A0A 0%, #151515 50%, #1F0F0F 100%);
+}
+
+.header-content {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.main-logo {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    text-decoration: none;
+}
+
+.main-logo img {
+    height: 50px;
+    filter: brightness(0) invert(1);
+    transition: var(--transition);
+}
+
+.main-logo:hover img {
+    filter: brightness(0) invert(1) drop-shadow(0 0 5px rgba(255, 255, 255, 0.3));
+    transform: scale(1.05);
+}
+
+.company-name {
+    font-size: 24px;
+    font-weight: 700;
+}
+
+.company-name .perspective {
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.company-name .painting {
+    color: #E8E8E8;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.nav-container {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+}
+
+.nav-menu {
+    display: flex;
+    gap: 30px;
+}
+
+.nav-link {
+    color: rgba(255, 255, 255, 0.9);
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 17px;
+    position: relative;
+    transition: var(--transition);
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: white;
+    transition: width 0.3s ease;
+    box-shadow: 0 0 5px rgba(255, 255, 255, 0.3);
+}
+
+.nav-link:hover {
+    color: white;
+    transform: translateY(-1px);
+}
+
+.nav-link:hover::after {
+    width: 100%;
+}
+
+.nav-link.active::after {
+    width: 100%;
+}
+
+.header-cta-buttons {
+    display: flex;
+    gap: 15px;
+}
+
+.phone-btn {
+    background: linear-gradient(135deg, #0A0A0A 0%, #1A1A1A 50%, #2A2A2A 100%);
+    color: rgba(255, 255, 255, 0.9);
+    padding: 12px 24px;
+    border-radius: 25px;
+    text-decoration: none;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: var(--transition);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 3px 15px rgba(0, 0, 0, 0.5);
+}
+
+.phone-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.7);
+    background: linear-gradient(135deg, #1A1A1A 0%, #2A2A2A 50%, #3A3A3A 100%);
+    border-color: rgba(255, 255, 255, 0.2);
+}
+
+.phone-btn i {
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.quote-btn {
+    background: linear-gradient(135deg, #FFFFFF 0%, #E8E8E8 50%, #D0D0D0 100%);
+    color: #1A1A1A;
+    padding: 12px 24px;
+    border-radius: 25px;
+    text-decoration: none;
+    font-weight: 700;
+    transition: var(--transition);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    box-shadow: 0 3px 15px rgba(255, 255, 255, 0.2);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.quote-btn:hover {
+    transform: translateY(-2px) scale(1.05);
+    box-shadow: 0 5px 25px rgba(255, 255, 255, 0.3);
+    background: linear-gradient(135deg, #F0F0F0 0%, #FFFFFF 50%, #F5F5F5 100%);
+    color: #0A0A0A;
+}
+
+/* Mobile Menu */
+.mobile-menu-btn {
+    display: none;
+    flex-direction: column;
+    gap: 4px;
+    cursor: pointer;
+    padding: 5px;
+    background: none;
+    border: none;
+}
+
+.mobile-menu-btn span {
+    width: 25px;
+    height: 3px;
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 3px;
+    transition: var(--transition);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+}
+
+.mobile-menu-btn.active span:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+}
+
+.mobile-menu-btn.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.mobile-menu-btn.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(7px, -6px);
+}
+
+/* Mobile Navigation */
+.mobile-nav {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 75%;
+    max-width: 320px;
+    height: 100vh;
+    background: var(--gradient-main);
+    box-shadow: -2px 0 10px rgba(0,0,0,0.5);
+    transition: right 0.3s ease;
+    z-index: 999;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+.mobile-nav.active {
+    right: 0;
+}
+
+.mobile-nav-content {
+    padding: 15px;
+    padding-top: 60px;
+    max-height: 100vh;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+.mobile-nav-close {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 30px;
+}
+
+.close-btn {
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    color: white;
+}
+
+.mobile-nav-menu {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    padding-bottom: 20px;
+}
+
+.mobile-nav-link {
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 14px;
+    display: block;
+    padding: 8px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    white-space: normal;
+    word-wrap: break-word;
+}
+
+.mobile-nav-link:hover {
+    color: rgba(46, 95, 141, 0.9);
+}
+
+/* Overlay */
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.7);
+    opacity: 0;
+    visibility: hidden;
+    transition: var(--transition);
+    z-index: 998;
+}
+
+.overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* Gallery Hero */
+.gallery-hero {
+    background: var(--gradient-main);
+    color: white;
+    padding: 140px 20px 80px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    margin-top: 80px;
+    margin-bottom: 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.gallery-hero::before {
+    content: '';
+    position: absolute;
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(circle, rgba(46, 95, 141, 0.05) 0%, transparent 60%);
+    border-radius: 50%;
+    top: -300px;
+    right: -300px;
+}
+
+.gallery-hero h1 {
+    font-size: 48px;
+    font-weight: 800;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+    position: relative;
+    z-index: 1;
+}
+
+.gallery-hero h1 span {
+    color: rgba(46, 95, 141, 0.9);
+}
+
+.gallery-hero p {
+    font-size: 20px;
+    color: rgba(255, 255, 255, 0.8);
+    max-width: 600px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
+    line-height: 1.6;
+}
+
+/* Gallery Filter */
+.gallery-filter {
+    padding: 25px 20px;
+    background: var(--gradient-main);
+    box-shadow: 0 2px 20px rgba(0,0,0,0.5);
+    position: sticky;
+    top: 70px; /* Slightly overlap with header to prevent gap */
+    z-index: 100;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    border-top: 1px solid rgba(255, 255, 255, 0.05); /* Add top border to connect with header */
+    margin-top: -5px; /* Negative margin to eliminate gap */
+    padding-top: 30px; /* Extra padding to compensate for negative margin */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.filter-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    text-align: center;
+}
+
+.filter-btn {
+    background: transparent;
+    border: 2px solid rgba(255, 255, 255, 0.1);
+    color: rgba(255, 255, 255, 0.7);
+    padding: 10px 24px;
+    border-radius: 25px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: var(--transition);
+    font-family: inherit;
+}
+
+.filter-btn:hover {
+    border-color: rgba(46, 95, 141, 0.5);
+    color: white;
+    background: rgba(46, 95, 141, 0.1);
+}
+
+.filter-btn.active {
+    background: rgba(46, 95, 141, 0.9);
+    border-color: transparent;
+    color: white;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+}
+
+/* Filter More Button */
+.filter-more-btn {
+    display: none;
+    background: transparent;
+    border: 2px solid rgba(255, 255, 255, 0.1);
+    color: rgba(255, 255, 255, 0.7);
+    padding: 10px 25px;
+    border-radius: 25px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: var(--transition);
+    margin-left: 10px;
+}
+
+.filter-more-btn:hover {
+    border-color: rgba(46, 95, 141, 0.5);
+    color: white;
+    background: rgba(46, 95, 141, 0.1);
+}
+
+.filter-more-btn .less-text {
+    display: none;
+}
+
+.filter-more-btn.expanded .more-text {
+    display: none;
+}
+
+.filter-more-btn.expanded .less-text {
+    display: inline;
+}
+
+/* Hide extra filters on mobile by default */
+@media (max-width: 768px) {
+    .extra-filter {
+        display: none !important;
+    }
+    
+    .extra-filter.show {
+        display: inline-block !important;
+        animation: fadeIn 0.3s ease;
+    }
+    
+    .filter-more-btn {
+        display: inline-block;
+    }
+    
+    .filter-container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 10px;
+    }
+    
+    @keyframes fadeIn {
+        from {
+            opacity: 0;
+            transform: translateY(-10px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+}
+
+/* Category Description */
+.category-description {
+    padding: 40px 20px;
+    background: linear-gradient(135deg, rgba(46, 95, 141, 0.05) 0%, transparent 100%);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.description-content {
+    max-width: 900px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.category-title {
+    font-size: 32px;
+    color: rgba(46, 95, 141, 0.9);
+    margin-bottom: 15px;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.category-text {
+    font-size: 17px;
+    color: rgba(255, 255, 255, 0.8);
+    line-height: 1.8;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+@media (max-width: 768px) {
+    .category-description {
+        padding: 30px 20px;
+    }
+    
+    .category-title {
+        font-size: 26px;
+    }
+    
+    .category-text {
+        font-size: 15px;
+    }
+}
+
+/* Gallery Grid */
+.gallery-grid-section {
+    padding: 60px 20px 100px;
+    max-width: 1400px;
+    margin: 0 auto;
+    background: var(--gradient-main);
+    overflow-x: hidden;
+}
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 30px;
+    margin-bottom: 60px;
+    overflow-x: hidden;
+}
+
+/* Three column layout for categories with fewer items */
+.gallery-grid.grid-three-columns {
+    grid-template-columns: repeat(3, 1fr);
+    max-width: 1400px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.gallery-item {
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    cursor: pointer;
+    transition: var(--transition);
+    background: rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    height: 400px;
+}
+
+.gallery-item:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.7);
+    border-color: rgba(46, 95, 141, 0.3);
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center 30%;
+    transition: transform 0.5s ease;
+    filter: brightness(0.9);
+    transform: scale(0.95);
+}
+
+.gallery-item:hover img {
+    transform: scale(1);
+    filter: brightness(1);
+}
+
+.gallery-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(to top, rgba(0,0,0,0.95) 0%, rgba(0,0,0,0.7) 50%, transparent 100%);
+    padding: 30px;
+    transform: translateY(100%);
+    transition: transform 0.3s ease;
+}
+
+.gallery-item:hover .gallery-overlay {
+    transform: translateY(0);
+}
+
+.gallery-overlay h3 {
+    color: white;
+    font-size: 24px;
+    margin-bottom: 10px;
+    font-weight: 700;
+}
+
+.gallery-overlay p {
+    color: rgba(255,255,255,0.8);
+    font-size: 16px;
+    margin-bottom: 5px;
+    line-height: 1.4;
+}
+
+.gallery-tags {
+    display: flex;
+    gap: 10px;
+    margin-top: 15px;
+}
+
+.gallery-tag {
+    background: rgba(46, 95, 141, 0.3);
+    color: white;
+    padding: 5px 15px;
+    border-radius: 15px;
+    font-size: 12px;
+    border: 1px solid rgba(46, 95, 141, 0.4);
+}
+
+/* View More Button */
+.view-more-btn {
+    display: none;
+    margin: 50px auto;
+    padding: 15px 40px;
+    background: var(--primary);
+    color: white;
+    border: none;
+    border-radius: 50px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 15px rgba(46, 95, 141, 0.3);
+    text-align: center;
+}
+
+.view-more-btn:hover {
+    background: var(--accent);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(74, 144, 226, 0.4);
+}
+
+.view-more-btn i {
+    margin-right: 8px;
+}
+
+/* Lightbox */
+.lightbox {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.95);
+    z-index: 2000;
+    display: none;
+    align-items: center;
+    justify-content: center;
+}
+
+.lightbox.active {
+    display: flex;
+}
+
+.lightbox-content {
+    position: relative;
+    max-width: 90%;
+    max-height: 90%;
+}
+
+.lightbox-content img {
+    width: auto;
+    height: auto;
+    max-width: 90vw;
+    max-height: 90vh;
+    object-fit: contain;
+    border-radius: 10px;
+}
+
+.lightbox-close {
+    position: absolute;
+    top: -40px;
+    right: 0;
+    color: white;
+    font-size: 36px;
+    cursor: pointer;
+    transition: var(--transition);
+    background: rgba(26, 26, 26, 0.9);
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 1;
+}
+
+.lightbox-close:hover {
+    color: white;
+    background: rgba(46, 95, 141, 0.9);
+    transform: scale(1.1);
+}
+
+.lightbox-nav {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(26, 26, 26, 0.9);
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    color: white;
+    font-size: 24px;
+    padding: 15px 20px;
+    cursor: pointer;
+    transition: var(--transition);
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.lightbox-nav:hover {
+    background: rgba(46, 95, 141, 0.9);
+    border-color: rgba(46, 95, 141, 0.5);
+    transform: translateY(-50%) scale(1.1);
+}
+
+.lightbox-prev {
+    left: 20px;
+}
+
+.lightbox-next {
+    right: 20px;
+}
+
+/* Color Palette Section */
+.color-palette-section {
+    padding: 100px 20px;
+    background: var(--gradient-main);
+    position: relative;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.color-palette-section::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(circle, rgba(46, 95, 141, 0.03) 0%, transparent 60%);
+    pointer-events: none;
+}
+
+.color-palette-header {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.color-palette-header h2 {
+    font-size: 42px;
+    color: white;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+    font-weight: 800;
+}
+
+.color-palette-header h2 span {
+    color: rgba(46, 95, 141, 0.8);
+}
+
+.color-palette-header p {
+    font-size: 18px;
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.color-palette-container {
+    max-width: 1000px;
+    margin: 0 auto;
+    background: rgba(0, 0, 0, 0.4);
+    border-radius: 20px;
+    padding: 40px;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.5);
+    border: 1px solid rgba(46, 95, 141, 0.15);
+    backdrop-filter: blur(10px);
+}
+
+.color-preview {
+    height: 300px;
+    border-radius: 15px;
+    background: #E8E8E8;
+    margin-bottom: 40px;
+    position: relative;
+    overflow: hidden;
+    transition: background-color 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid rgba(255, 255, 255, 0.1);
+}
+
+.color-preview-label {
+    background: rgba(46, 95, 141, 0.9);
+    color: white;
+    padding: 10px 20px;
+    border-radius: 20px;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.color-options {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
+    gap: 15px;
+    margin-bottom: 30px;
+}
+
+.color-option {
+    width: 100%;
+    aspect-ratio: 1;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: var(--transition);
+    position: relative;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+    border: 2px solid transparent;
+}
+
+.color-option:hover {
+    transform: translateY(-5px) scale(1.1);
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.4);
+    border-color: rgba(255, 255, 255, 0.3);
+}
+
+.color-option.active {
+    border-color: rgba(255, 255, 255, 0.4);
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.5);
+}
+
+.color-option.active::after {
+    content: '✓';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-size: 24px;
+    font-weight: bold;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+/* Responsive color options visibility */
+.color-option.tablet-show,
+.color-option.desktop-show,
+.color-option.large-desktop-show,
+.color-option.xl-desktop-show {
+    display: none;
+}
+
+@media (min-width: 769px) {
+    .color-option.tablet-show {
+        display: block;
+    }
+}
+
+@media (min-width: 1024px) {
+    .color-option.desktop-show {
+        display: block;
+    }
+}
+
+@media (min-width: 1440px) {
+    .color-option.large-desktop-show {
+        display: block;
+    }
+}
+
+@media (min-width: 1920px) {
+    .color-option.xl-desktop-show {
+        display: block;
+    }
+}
+
+@media (max-width: 768px) {
+    .color-palette-section {
+        padding: 60px 20px;
+    }
+    
+    .color-palette-container {
+        padding: 30px 20px;
+    }
+    
+    .color-preview {
+        height: 200px;
+    }
+    
+    .color-options {
+        grid-template-columns: repeat(4, 1fr);
+        gap: 10px;
+    }
+}
+
+/* Gallery CTA */
+.gallery-cta {
+    background: var(--gradient-main);
+    padding: 100px 20px;
+    text-align: center;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    position: relative;
+    overflow: hidden;
+}
+
+.gallery-cta::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 800px;
+    height: 400px;
+    background: radial-gradient(ellipse, rgba(46, 95, 141, 0.05) 0%, transparent 60%);
+    pointer-events: none;
+}
+
+.gallery-cta h2 {
+    font-size: 56px;
+    color: white;
+    margin-bottom: 20px;
+    font-weight: 800;
+    text-transform: uppercase;
+    line-height: 1.1;
+}
+
+.gallery-cta p {
+    font-size: 20px;
+    color: rgba(255, 255, 255, 0.7);
+    margin-bottom: 40px;
+    font-weight: 300;
+}
+
+.btn {
+    padding: 18px 40px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 16px;
+    transition: var(--transition);
+    display: inline-block;
+    text-transform: uppercase;
+}
+
+.btn-primary {
+    background: rgba(46, 95, 141, 0.9);
+    color: white;
+}
+
+.btn-primary:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+    background: rgba(46, 95, 141, 1);
+}
+
+/* Floating shapes animation */
+.floating-shapes {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: -1;
+    pointer-events: none;
+}
+
+.shape {
+    position: absolute;
+    background: linear-gradient(135deg, rgba(46, 95, 141, 0.02) 0%, rgba(46, 95, 141, 0.01) 100%);
+    border-radius: 50%;
+    animation: float 20s infinite ease-in-out;
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: translate(0, 0) rotate(0deg);
+        opacity: 0.02;
+    }
+    25% {
+        transform: translate(30px, -50px) rotate(90deg);
+        opacity: 0.03;
+    }
+    50% {
+        transform: translate(-20px, 30px) rotate(180deg);
+        opacity: 0.02;
+    }
+    75% {
+        transform: translate(40px, 20px) rotate(270deg);
+        opacity: 0.03;
+    }
+}
+
+/* Larger screens - Taller header matching main page */
+@media (min-width: 1200px) {
+    header {
+        padding: 25px 0;
+    }
+    
+    header.scrolled {
+        padding: 20px 0;
+    }
+    
+    .main-logo img {
+        height: 60px;
+    }
+    
+    .company-name {
+        font-size: 28px;
+    }
+    
+    .nav-links a {
+        font-size: 19px;
+    }
+    
+    .header-buttons .btn {
+        padding: 12px 25px;
+        font-size: 16px;
+    }
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+    .nav-container {
+        display: none;
+    }
+    
+    .mobile-menu-btn {
+        display: flex;
+    }
+}
+
+@media (max-width: 768px) {
+    html, body {
+        overflow-x: hidden !important;
+        max-width: 100vw !important;
+        position: relative !important;
+    }
+    
+    .mobile-nav {
+        width: 80%;
+        max-width: 280px;
+    }
+    
+    .mobile-nav-link {
+        font-size: 13px;
+    }
+    
+    .gallery-hero {
+        padding: 120px 20px 70px;
+        margin-top: 70px;
+        max-width: 100vw;
+        overflow-x: hidden;
+    }
+    
+    .gallery-grid {
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 20px;
+        overflow-x: hidden;
+        max-width: 100vw;
+    }
+    
+    .gallery-grid.grid-three-columns {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .gallery-item {
+        height: 350px;
+    }
+    
+    .gallery-hero h1 {
+        font-size: 36px;
+    }
+    
+    .filter-container {
+        gap: 10px;
+    }
+    
+    .filter-btn {
+        font-size: 14px;
+        padding: 8px 20px;
+    }
+    
+    .filter-more-btn {
+        font-size: 14px;
+        padding: 8px 20px;
+    }
+    
+    .gallery-cta h2 {
+        font-size: 36px;
+    }
+}
+
+@media (max-width: 480px) {
+    .gallery-hero {
+        padding: 100px 20px 60px;
+        margin-top: 60px;
+    }
+    
+    .gallery-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .gallery-grid.grid-three-columns {
+        grid-template-columns: 1fr;
+    }
+    
+    .gallery-item {
+        height: 300px;
+    }
+    
+    .gallery-hero h1 {
+        font-size: 28px;
+    }
+    
+    .gallery-hero p {
+        font-size: 16px;
+    }
+    
+    .gallery-cta h2 {
+        font-size: 28px;
+    }
+    
+    .lightbox-nav {
+        width: 40px;
+        height: 40px;
+        font-size: 18px;
+        padding: 10px;
+    }
+}
+    </style>
+</head>
+
+<body>
+    <!-- Loading Screen -->
+    <div class="loading-screen" id="loadingScreen">
+        <div class="loader"></div>
+    </div>
+
+    <!-- Back to Top Button -->
+    <button class="back-to-top" id="backToTop" aria-label="Back to top">
+        <i class="fa-solid fa-chevron-up"></i>
+    </button>
+
+    <!-- Floating Background Shapes -->
+    <div class="floating-shapes">
+        <div class="shape" style="width: 300px; height: 300px; top: 10%; left: -5%; animation-duration: 25s;"></div>
+        <div class="shape" style="width: 200px; height: 200px; top: 50%; right: -5%; animation-duration: 20s; animation-delay: 5s;"></div>
+        <div class="shape" style="width: 400px; height: 400px; bottom: 10%; left: 10%; animation-duration: 30s; animation-delay: 10s;"></div>
+        <div class="shape" style="width: 150px; height: 150px; top: 30%; right: 20%; animation-duration: 15s; animation-delay: 2s;"></div>
+    </div>
+
+    <header id="header">
+        <div class="header-content">
+            <a href="index.html" class="main-logo" id="logoLink">
+                <img src="media/perspective-logo-old.png" alt="Perspective Painting Logo">
+                <div class="company-name">
+                    <span class="perspective">PERSPECTIVE</span>
+                    <span class="painting">PAINTING</span>
+                </div>
+            </a>
+            
+            <nav class="nav-container">
+                <div class="nav-menu">
+                    <a href="index.html#about" class="nav-link">About</a>
+                    <a href="index.html#services" class="nav-link">Services</a>
+                    <a href="gallery.html" class="nav-link active">Gallery</a>
+                    <a href="index.html#team" class="nav-link">Team</a>
+                    <a href="index.html#testimonials" class="nav-link">Reviews</a>
+                    <a href="contact.html" class="nav-link">Contact</a>
+                </div>
+                <div class="header-cta-buttons">
+                    <a href="tel:6198184816" class="phone-btn">
+                        <i class="fa-solid fa-phone"></i> (619) 818-4816
+                    </a>
+                    <a href="contact.html#estimate" class="quote-btn">FREE ESTIMATE</a>
+                </div>
+            </nav>
+            
+            <button class="mobile-menu-btn" id="mobileMenuBtn">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </header>
+
+    <!-- Mobile Navigation -->
+    <div class="mobile-nav" id="mobileNav">
+        <div class="mobile-nav-content">
+            <div class="mobile-nav-close">
+                <button class="close-btn" id="closeBtn">
+                    <i class="fa-solid fa-times"></i>
+                </button>
+            </div>
+            <div class="mobile-nav-menu">
+                <a href="index.html#about" class="mobile-nav-link">About</a>
+                <a href="index.html#services" class="mobile-nav-link">Services</a>
+                <a href="gallery.html" class="mobile-nav-link">Gallery</a>
+                <a href="index.html#team" class="mobile-nav-link">Team</a>
+                <a href="index.html#testimonials" class="mobile-nav-link">Reviews</a>
+                <a href="contact.html" class="mobile-nav-link">Contact</a>
+                <a href="contact.html#estimate" class="mobile-nav-link">Get Free Estimate</a>
+                <a href="tel:6198184816" class="mobile-nav-link">
+                    <i class="fa-solid fa-phone"></i> (619) 818-4816
+                </a>
+            </div>
+        </div>
+    </div>
+    <div class="overlay" id="overlay"></div>
+
+    <main>
+        <section class="gallery-hero">
+            <h1>Our <span>Portfolio</span></h1>
+            <p>Explore our collection of residential and commercial painting projects throughout San Diego County</p>
+        </section>
+        
+        <section class="gallery-filter">
+            <div class="filter-container">
+                <button class="filter-btn active main-filter" data-filter="all">All Projects</button>
+                <button class="filter-btn main-filter" data-filter="interior">Interior</button>
+                <button class="filter-btn main-filter" data-filter="exterior">Exterior</button>
+                <button class="filter-btn main-filter" data-filter="commercial">Commercial</button>
+                <button class="filter-btn extra-filter" data-filter="residential">Residential</button>
+                <button class="filter-btn extra-filter" data-filter="cabinet">Cabinets</button>
+                <button class="filter-btn extra-filter" data-filter="small-business">Small Businesses</button>
+                <button class="filter-btn extra-filter" data-filter="mural">Murals</button>
+                <button class="filter-more-btn" id="filterMoreBtn">
+                    <span class="more-text">More <i class="fas fa-chevron-down"></i></span>
+                    <span class="less-text">Less <i class="fas fa-chevron-up"></i></span>
+                </button>
+            </div>
+        </section>
+        
+        <!-- Category Description Section -->
+        <section class="category-description" id="categoryDescription">
+            <div class="description-content">
+                <h2 class="category-title">All Projects</h2>
+                <p class="category-text">Browse our complete portfolio of residential and commercial painting projects throughout San Diego County. Each project showcases our commitment to quality, attention to detail, and customer satisfaction.</p>
+            </div>
+        </section>
+        
+        <section class="gallery-grid-section">
+            <div class="gallery-grid" id="galleryGrid">
+                <!-- Interior Projects -->
+               
+                
+                <div class="gallery-item" data-category="interior residential">
+                    <img src="media/calle-la-serra-interior.jpg" alt="Professional interior painting San Diego - Calle La Serra luxury home interior transformation in La Jolla">
+                    <div class="gallery-overlay">
+                        <h3>Calle La Serra Interior</h3>
+                        <p>La Jolla, CA</p>
+                        <p>Modern interior transformation</p>
+                        <div class="gallery-tags">
+                            <span class="gallery-tag">Interior</span>
+                            <span class="gallery-tag">Residential</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="gallery-item" data-category="interior residential">
+                    <img src="media/paso-real-interior.jpg" alt="Residential interior painting Carlsbad - Paso Real elegant home interior painting services">
+                    <div class="gallery-overlay">
+                        <h3>Paso Real Interior</h3>
+                        <p>Carlsbad, CA</p>
+                        <p>Elegant home interior</p>
+                        <div class="gallery-tags">
+                            <span class="gallery-tag">Interior</span>
+                            <span class="gallery-tag">Residential</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="gallery-item" data-category="interior residential">
+                    <img src="media/firebrand-interior.jpg" alt="Interior house painting Del Mar - Firebrand contemporary interior design and painting">
+                    <div class="gallery-overlay">
+                        <h3>Firebrand Interior</h3>
+                        <p>Del Mar, CA</p>
+                        <p>Contemporary interior design</p>
+                        <div class="gallery-tags">
+                            <span class="gallery-tag">Interior</span>
+                            <span class="gallery-tag">Residential</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="gallery-item" data-category="interior residential">
+                    <img src="media/verdes-el-ranchero-interior.jpeg" alt="Luxury interior painting San Diego - Verdes El Ranchero estate interior renovation">
+                    <div class="gallery-overlay">
+                        <h3>Ranchero Estate Interior</h3>
+                        <p>San Diego, CA</p>
+                        <p>Luxury interior renovation</p>
+                        <div class="gallery-tags">
+                            <span class="gallery-tag">Interior</span>
+                            <span class="gallery-tag">Residential</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="gallery-item" data-category="interior commercial">
+                    <img src="media/fumc-interior.jpg" alt="Commercial interior painting San Diego - Church sanctuary professional painting services">
+                    <div class="gallery-overlay">
+                        <h3>Church Interior</h3>
+                        <p>San Diego, CA</p>
+                        <p>Sacred space renovation</p>
+                        <div class="gallery-tags">
+                            <span class="gallery-tag">Interior</span>
+                            <span class="gallery-tag">Commercial</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Exterior Projects -->
+                <div class="gallery-item" data-category="exterior residential">
+                    <img src="media/rancho-cielo-exterior.jpg" alt="Exterior house painting Rancho Santa Fe - Mediterranean style home exterior painting">
+                    <div class="gallery-overlay">
+                        <h3>Rancho Cielo Estate</h3>
+                        <p>Rancho Santa Fe, CA</p>
+                        <p>Mediterranean style exterior</p>
+                        <div class="gallery-tags">
+                            <span class="gallery-tag">Exterior</span>
+                            <span class="gallery-tag">Residential</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="gallery-item" data-category="exterior residential">
+                    <img src="media/mustaine-exterior.jpg" alt="Exterior painting La Jolla - Mustaine residence modern exterior renovation">
+                    <div class="gallery-overlay">
+                        <h3>Mustaine Residence</h3>
+                        <p>La Jolla, CA</p>
+                        <p>Modern exterior renovation</p>
+                        <div class="gallery-tags">
+                            <span class="gallery-tag">Exterior</span>
+                            <span class="gallery-tag">Residential</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="gallery-item" data-category="exterior residential">
+                    <img src="media/ocean-front-exterior.jpg" alt="Coastal home exterior painting Mission Beach - Ocean front property painting services">
+                    <div class="gallery-overlay">
+                        <h3>Ocean Front Property</h3>
+                        <p>Mission Beach, CA</p>
+                        <p>Coastal home exterior</p>
+                        <div class="gallery-tags">
+                            <span class="gallery-tag">Exterior</span>
+                            <span class="gallery-tag">Residential</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="gallery-item" data-category="exterior residential">
+                    <img src="media/Mimulus-exterior.jpg" alt="Spanish revival exterior painting Encinitas - Mimulus residence professional painters">
+                    <div class="gallery-overlay">
+                        <h3>Mimulus Residence</h3>
+                        <p>Encinitas, CA</p>
+                        <p>Spanish revival exterior</p>
+                        <div class="gallery-tags">
+                            <span class="gallery-tag">Exterior</span>
+                            <span class="gallery-tag">Residential</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="gallery-item" data-category="exterior residential">
+                    <img src="media/firebrand-exterior.jpg" alt="Contemporary exterior painting Del Mar - Firebrand home exterior paint services">
+                    <div class="gallery-overlay">
+                        <h3>Firebrand Exterior</h3>
+                        <p>Del Mar, CA</p>
+                        <p>Contemporary home exterior</p>
+                        <div class="gallery-tags">
+                            <span class="gallery-tag">Exterior</span>
+                            <span class="gallery-tag">Residential</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="gallery-item" data-category="exterior residential">
+                    <img src="media/calle-la-serra-exterior.jpg" alt="Luxury home exterior painting La Jolla - Calle La Serra estate painting contractor">
+                    <div class="gallery-overlay">
+                        <h3>Calle La Serra Exterior</h3>
+                        <p>La Jolla, CA</p>
+                        <p>Luxury home exterior</p>
+                        <div class="gallery-tags">
+                            <span class="gallery-tag">Exterior</span>
+                            <span class="gallery-tag">Residential</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="gallery-item" data-category="exterior residential">
+                    <img src="media/exterior-home.jpg" alt="Traditional home exterior painting San Diego - Classic residential painting services">
+                    <div class="gallery-overlay">
+                        <h3>Classic Home Exterior</h3>
+                        <p>San Diego, CA</p>
+                        <p>Traditional home exterior painting</p>
+                        <div class="gallery-tags">
+                            <span class="gallery-tag">Exterior</span>
+                            <span class="gallery-tag">Residential</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="gallery-item" data-category="exterior residential">
+                    <img src="media/exterior-home-blue.jpg" alt="Vibrant blue exterior house painting San Diego - Coastal home painting contractor">
+                    <div class="gallery-overlay">
+                        <h3>Blue Coastal Home</h3>
+                        <p>San Diego, CA</p>
+                        <p>Vibrant blue exterior finish</p>
+                        <div class="gallery-tags">
+                            <span class="gallery-tag">Exterior</span>
+                            <span class="gallery-tag">Residential</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="gallery-item" data-category="exterior commercial small-business">
+                    <img src="media/restuarant-exterior.jpg" alt="Commercial exterior painting downtown San Diego - Restaurant facade renovation">
+                    <div class="gallery-overlay">
+                        <h3>Restaurant Exterior</h3>
+                        <p>Downtown San Diego</p>
+                        <p>Commercial facade renovation</p>
+                        <div class="gallery-tags">
+                            <span class="gallery-tag">Exterior</span>
+                            <span class="gallery-tag">Commercial</span>
+                            <span class="gallery-tag">Small Business</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Cabinet Projects -->
+                <div class="gallery-item" data-category="cabinet residential interior">
+                    <img src="media/trieste-cabinets-and-interior.jpg" alt="Kitchen cabinet refinishing Poway - Custom cabinet painting and restoration">
+                    <div class="gallery-overlay">
+                        <h3>Trieste Kitchen</h3>
+                        <p>Poway, CA</p>
+                        <p>Custom cabinet refinishing</p>
+                        <div class="gallery-tags">
+                            <span class="gallery-tag">Cabinets</span>
+                            <span class="gallery-tag">Interior</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="gallery-item" data-category="cabinet residential interior">
+                    <img src="media/Mimulus-cabinets-and-interior.jpg" alt="Cabinet painting Encinitas - Kitchen cabinet transformation and refinishing">
+                    <div class="gallery-overlay">
+                        <h3>Mimulus Kitchen</h3>
+                        <p>Encinitas, CA</p>
+                        <p>Kitchen cabinet transformation</p>
+                        <div class="gallery-tags">
+                            <span class="gallery-tag">Cabinets</span>
+                            <span class="gallery-tag">Interior</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Station murals kept for special projects -->
+                <div class="gallery-item" data-category="special commercial mural">
+                    <img src="media/station.jpg" alt="Commercial mural painting Mission Valley - Transit station artistic transformation">
+                    <div class="gallery-overlay">
+                        <h3>Transit Station Mural</h3>
+                        <p>Mission Valley</p>
+                        <p>Large-scale artistic transformation</p>
+                        <div class="gallery-tags">
+                            <span class="gallery-tag">Commercial</span>
+                            <span class="gallery-tag">Special Project</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="gallery-item" data-category="special commercial mural">
+                    <img src="media/station_2.jpg" alt="Large scale commercial mural San Diego - Community art project painting services">
+                    <div class="gallery-overlay">
+                        <h3>Transit Station Complete</h3>
+                        <p>Mission Valley</p>
+                        <p>Vibrant community art project</p>
+                        <div class="gallery-tags">
+                            <span class="gallery-tag">Commercial</span>
+                            <span class="gallery-tag">Mural</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Color Palette Selection Section -->
+        <section class="color-palette-section">
+            <div class="color-palette-header">
+                <h2>Visualize Your <span>Colors</span></h2>
+                <p>Choose from our curated palette or create your own</p>
+            </div>
+            
+            <div class="color-palette-container">
+                <div class="color-preview" id="colorPreview">
+                    <span class="color-preview-label">Click a color below to preview</span>
+                </div>
+                
+                <div class="color-options">
+                    <!-- Always visible colors -->
+                    <div class="color-option" style="background: #E8E8E8" data-color="#E8E8E8"></div>
+                    <div class="color-option" style="background: #F5F5DC" data-color="#F5F5DC"></div>
+                    <div class="color-option" style="background: #D3D3D3" data-color="#D3D3D3"></div>
+                    <div class="color-option" style="background: #778899" data-color="#778899"></div>
+                    
+                    <!-- Tablet and up (768px+) -->
+                    <div class="color-option tablet-show" style="background: #708090" data-color="#708090"></div>
+                    <div class="color-option tablet-show" style="background: #2C3E50" data-color="#2C3E50"></div>
+                    <div class="color-option tablet-show" style="background: #34495E" data-color="#34495E"></div>
+                    <div class="color-option tablet-show" style="background: #95A5A6" data-color="#95A5A6"></div>
+                    <div class="color-option tablet-show" style="background: #BDC3C7" data-color="#BDC3C7"></div>
+                    <div class="color-option tablet-show" style="background: #ECF0F1" data-color="#ECF0F1"></div>
+                    <div class="color-option tablet-show" style="background: #E74C3C" data-color="#E74C3C"></div>
+                    <div class="color-option tablet-show" style="background: #C0392B" data-color="#C0392B"></div>
+                    <div class="color-option tablet-show" style="background: #3498DB" data-color="#3498DB"></div>
+                    <div class="color-option tablet-show" style="background: #2980B9" data-color="#2980B9"></div>
+                    <div class="color-option tablet-show" style="background: #1ABC9C" data-color="#1ABC9C"></div>
+                    <div class="color-option tablet-show" style="background: #16A085" data-color="#16A085"></div>
+                    
+                    <!-- Desktop and up (1024px+) -->
+                    <div class="color-option desktop-show" style="background: #27AE60" data-color="#27AE60"></div>
+                    <div class="color-option desktop-show" style="background: #F39C12" data-color="#F39C12"></div>
+                    <div class="color-option desktop-show" style="background: #D68910" data-color="#D68910"></div>
+                    <div class="color-option desktop-show" style="background: #F4ECF7" data-color="#F4ECF7"></div>
+                    <div class="color-option desktop-show" style="background: #8B4513" data-color="#8B4513"></div>
+                    <div class="color-option desktop-show" style="background: #CD853F" data-color="#CD853F"></div>
+                    <div class="color-option desktop-show" style="background: #DEB887" data-color="#DEB887"></div>
+                    <div class="color-option desktop-show" style="background: #F0E68C" data-color="#F0E68C"></div>
+                    
+                    <!-- Large desktop (1440px+) -->
+                    <div class="color-option large-desktop-show" style="background: #FFE4B5" data-color="#FFE4B5"></div>
+                    <div class="color-option large-desktop-show" style="background: #FFDEAD" data-color="#FFDEAD"></div>
+                    <div class="color-option large-desktop-show" style="background: #F5DEB3" data-color="#F5DEB3"></div>
+                    <div class="color-option large-desktop-show" style="background: #FFF8DC" data-color="#FFF8DC"></div>
+                    <div class="color-option large-desktop-show" style="background: #FFEBCD" data-color="#FFEBCD"></div>
+                    <div class="color-option large-desktop-show" style="background: #FAF0E6" data-color="#FAF0E6"></div>
+                    <div class="color-option large-desktop-show" style="background: #FAEBD7" data-color="#FAEBD7"></div>
+                    <div class="color-option large-desktop-show" style="background: #FFE4E1" data-color="#FFE4E1"></div>
+                    
+                    <!-- Extra large screens (1920px+) -->
+                    <div class="color-option xl-desktop-show" style="background: #9370DB" data-color="#9370DB"></div>
+                    <div class="color-option xl-desktop-show" style="background: #BA55D3" data-color="#BA55D3"></div>
+                    <div class="color-option xl-desktop-show" style="background: #FF69B4" data-color="#FF69B4"></div>
+                    <div class="color-option xl-desktop-show" style="background: #FFC0CB" data-color="#FFC0CB"></div>
+                </div>
+                
+                <!-- Custom Color Picker Section -->
+                <div class="custom-color-section" style="display: flex; align-items: center; justify-content: center; gap: 20px; padding: 20px; background: rgba(255, 255, 255, 0.05); border-radius: 15px; border: 1px solid rgba(255, 255, 255, 0.1); margin-top: 30px;">
+                    <span style="color: rgba(255, 255, 255, 0.8); font-size: 14px; font-weight: 600; text-transform: uppercase; letter-spacing: 1px;">Choose Custom Color:</span>
+                    <input type="color" id="customColorPicker" value="#2E5F8D" style="width: 80px; height: 80px; border-radius: 10px; border: 2px solid rgba(255, 255, 255, 0.2); cursor: pointer; background: transparent;">
+                    <span id="customColorValue" style="padding: 10px 20px; background: rgba(0, 0, 0, 0.3); border-radius: 8px; color: white; font-family: monospace; font-size: 14px; border: 1px solid rgba(255, 255, 255, 0.1);">#2E5F8D</span>
+                </div>
+            </div>
+        </section>
+        
+        <section class="gallery-cta">
+            <h2>Ready to Transform Your Space?</h2>
+            <p>Let's discuss your next painting project</p>
+            <a href="contact.html#estimate" class="btn btn-primary">Get Free Estimate</a>
+        </section>
+    </main>
+    
+    <!-- Lightbox -->
+    <div class="lightbox" id="lightbox">
+        <div class="lightbox-content">
+            <span class="lightbox-close" id="lightboxClose">&times;</span>
+            <img src="" alt="" id="lightboxImage">
+            <button class="lightbox-nav lightbox-prev" id="lightboxPrev">
+                <i class="fa-solid fa-chevron-left"></i>
+            </button>
+            <button class="lightbox-nav lightbox-next" id="lightboxNext">
+                <i class="fa-solid fa-chevron-right"></i>
+            </button>
+        </div>
+    </div>
+    
+    <script>
+// Loading Screen
+window.addEventListener('load', function() {
+    setTimeout(() => {
+        document.getElementById('loadingScreen').classList.add('hidden');
+    }, 500);
+});
+
+// Header scroll effect
+window.addEventListener('scroll', function() {
+    const header = document.getElementById('header');
+    if (window.scrollY > 100) {
+        header.classList.add('scrolled');
+    } else {
+        header.classList.remove('scrolled');
+    }
+    
+    // Back to top button
+    const backToTop = document.getElementById('backToTop');
+    if (window.scrollY > 300) {
+        backToTop.classList.add('visible');
+    } else {
+        backToTop.classList.remove('visible');
+    }
+});
+
+// Back to top functionality
+document.getElementById('backToTop').addEventListener('click', function() {
+    window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+    });
+});
+
+// Mobile Menu
+const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+const mobileNav = document.getElementById('mobileNav');
+const overlay = document.getElementById('overlay');
+const closeBtn = document.getElementById('closeBtn');
+
+function toggleMobileMenu() {
+    mobileMenuBtn.classList.toggle('active');
+    mobileNav.classList.toggle('active');
+    overlay.classList.toggle('active');
+}
+
+mobileMenuBtn.addEventListener('click', toggleMobileMenu);
+closeBtn.addEventListener('click', toggleMobileMenu);
+overlay.addEventListener('click', toggleMobileMenu);
+
+// Close mobile menu when clicking on a link
+document.querySelectorAll('.mobile-nav-link').forEach(link => {
+    link.addEventListener('click', () => {
+        toggleMobileMenu();
+    });
+});
+
+// Gallery Filter
+const filterButtons = document.querySelectorAll('.filter-btn');
+const galleryItems = document.querySelectorAll('.gallery-item');
+
+// Filter More/Less functionality for mobile
+const filterMoreBtn = document.getElementById('filterMoreBtn');
+const extraFilters = document.querySelectorAll('.extra-filter');
+
+if (filterMoreBtn) {
+    filterMoreBtn.addEventListener('click', function() {
+        this.classList.toggle('expanded');
+        
+        extraFilters.forEach(filter => {
+            filter.classList.toggle('show');
+        });
+    });
+}
+
+// View More functionality for mobile
+let visibleItemsCount = 4;
+const itemsIncrement = 4;
+
+function initializeViewMore() {
+    // Only apply on mobile screens
+    if (window.innerWidth <= 768) {
+        let viewMoreBtn = document.getElementById('viewMoreBtn');
+        
+        // Create View More button if it doesn't exist
+        if (!viewMoreBtn) {
+            const gridSection = document.querySelector('.gallery-grid-section');
+            const btn = document.createElement('button');
+            btn.id = 'viewMoreBtn';
+            btn.className = 'view-more-btn';
+            btn.innerHTML = '<i class="fas fa-plus"></i> View More';
+            btn.onclick = showMoreItems;
+            gridSection.appendChild(btn);
+            viewMoreBtn = btn;
+        }
+        
+        // Show only first 4 items initially
+        updateVisibleItems();
+        
+        // Show the button
+        viewMoreBtn.style.display = 'block';
+    } else {
+        // Show all items on larger screens
+        galleryItems.forEach(item => {
+            item.style.display = '';
+        });
+        const viewMoreBtn = document.getElementById('viewMoreBtn');
+        if (viewMoreBtn) {
+            viewMoreBtn.style.display = 'none';
+        }
+    }
+}
+
+function updateVisibleItems() {
+    const activeFilter = document.querySelector('.filter-btn.active').getAttribute('data-filter');
+    let visibleCount = 0;
+    let totalMatchingItems = 0;
+    
+    // First, count total matching items
+    galleryItems.forEach(item => {
+        const categories = item.getAttribute('data-category').split(' ');
+        const matchesFilter = activeFilter === 'all' || categories.includes(activeFilter);
+        if (matchesFilter) {
+            totalMatchingItems++;
+        }
+    });
+    
+    // Then show/hide items based on current visible count
+    galleryItems.forEach(item => {
+        const categories = item.getAttribute('data-category').split(' ');
+        const matchesFilter = activeFilter === 'all' || categories.includes(activeFilter);
+        
+        if (matchesFilter) {
+            if (visibleCount < visibleItemsCount) {
+                item.style.display = 'block';
+                visibleCount++;
+            } else {
+                item.style.display = 'none';
+            }
+        } else {
+            item.style.display = 'none';
+        }
+    });
+    
+    // Update View More button visibility
+    const viewMoreBtn = document.getElementById('viewMoreBtn');
+    if (viewMoreBtn && window.innerWidth <= 768) {
+        const hasMoreItems = totalMatchingItems > visibleItemsCount;
+        viewMoreBtn.style.display = hasMoreItems ? 'block' : 'none';
+        
+        // Update button text if all items are shown
+        if (visibleItemsCount >= totalMatchingItems) {
+            viewMoreBtn.style.display = 'none';
+        }
+    }
+}
+
+function showMoreItems() {
+    visibleItemsCount += itemsIncrement;
+    updateVisibleItems();
+}
+
+// Category descriptions
+const categoryDescriptions = {
+    'all': {
+        title: 'All Projects',
+        text: 'Browse our complete portfolio of residential and commercial painting projects throughout San Diego County. Each project showcases our commitment to quality, attention to detail, and customer satisfaction.'
+    },
+    'interior': {
+        title: 'Interior Painting',
+        text: 'Transform your indoor spaces with our professional interior painting services. From single rooms to entire homes, we specialize in walls, ceilings, trim, baseboards, and detailed finish work. Our team ensures minimal disruption while delivering flawless, long-lasting results.'
+    },
+    'exterior': {
+        title: 'Exterior Painting',
+        text: 'Protect and beautify your property with our comprehensive exterior painting services. We handle everything from surface preparation and repairs to premium paint application, ensuring your home or business can withstand San Diego\'s coastal climate while looking stunning.'
+    },
+    'commercial': {
+        title: 'Commercial Painting',
+        text: 'Keep your business looking professional with our commercial painting services. We work with offices, retail spaces, restaurants, churches, and industrial facilities, offering flexible scheduling to minimize disruption to your operations.'
+    },
+    'residential': {
+        title: 'Residential Painting',
+        text: 'Your home deserves the best. Our residential painting services cover everything from luxury estates to cozy family homes. We treat every property with care, using premium materials and proven techniques to achieve beautiful, durable finishes.'
+    },
+    'cabinet': {
+        title: 'Cabinet Refinishing',
+        text: 'Give your kitchen or bathroom a complete makeover without the cost of replacement. Our cabinet refinishing services include professional preparation, priming, and painting or staining to transform your existing cabinets into stunning focal points.'
+    },
+    'small-business': {
+        title: 'Small Business Solutions',
+        text: 'We understand the unique needs of small businesses. Our team provides cost-effective painting solutions that help local businesses create inviting spaces for customers while maintaining their budget and minimizing downtime.'
+    },
+    'mural': {
+        title: 'Murals & Artistic Projects',
+        text: 'Add character and creativity to your space with our custom mural services. From large-scale commercial murals to artistic accent walls, we bring your vision to life with exceptional attention to detail and artistic expertise.'
+    }
+};
+
+// Function to update category description
+function updateCategoryDescription(filter) {
+    const description = categoryDescriptions[filter] || categoryDescriptions['all'];
+    const titleElement = document.querySelector('.category-title');
+    const textElement = document.querySelector('.category-text');
+    
+    if (titleElement && textElement) {
+        titleElement.textContent = description.title;
+        textElement.textContent = description.text;
+        
+        // Add fade animation
+        titleElement.style.animation = 'fadeIn 0.5s ease';
+        textElement.style.animation = 'fadeIn 0.5s ease';
+        
+        setTimeout(() => {
+            titleElement.style.animation = '';
+            textElement.style.animation = '';
+        }, 500);
+    }
+}
+
+// Function to apply filter
+function applyFilter(filter) {
+    // Reset visible items count when filter changes
+    visibleItemsCount = 4;
+    
+    // Update category description
+    updateCategoryDescription(filter);
+    
+    filterButtons.forEach(b => b.classList.remove('active'));
+    
+    // Find and activate the correct button
+    const targetButton = Array.from(filterButtons).find(btn => 
+        btn.getAttribute('data-filter') === filter
+    );
+    
+    if (targetButton) {
+        targetButton.classList.add('active');
+    }
+    
+    // Update visible items with View More functionality on mobile
+    if (window.innerWidth <= 768) {
+        updateVisibleItems();
+    } else {
+        let visibleCount = 0;
+        galleryItems.forEach(item => {
+            if (filter === 'all') {
+                item.style.display = 'block';
+                visibleCount++;
+            } else {
+                const categories = item.getAttribute('data-category');
+                if (categories && categories.includes(filter)) {
+                    item.style.display = 'block';
+                    visibleCount++;
+                } else {
+                    item.style.display = 'none';
+                }
+            }
+        });
+    }
+    
+    // Adjust grid columns based on visible items for certain categories
+    const galleryGrid = document.getElementById('galleryGrid');
+    const fewItemCategories = ['cabinet', 'small-business', 'mural'];
+    
+    if (fewItemCategories.includes(filter) || visibleCount <= 6) {
+        galleryGrid.classList.add('grid-three-columns');
+    } else {
+        galleryGrid.classList.remove('grid-three-columns');
+    }
+}
+
+// Check for URL parameters on page load
+window.addEventListener('DOMContentLoaded', () => {
+    const urlParams = new URLSearchParams(window.location.search);
+    const filterParam = urlParams.get('filter');
+    
+    if (filterParam) {
+        applyFilter(filterParam);
+        // Scroll to gallery section
+        const gallerySection = document.querySelector('.gallery-container');
+        if (gallerySection) {
+            gallerySection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+    }
+    
+    // Adjust sticky filter position to match header height with slight overlap
+    const header = document.getElementById('header') || document.querySelector('header');
+    const galleryFilter = document.querySelector('.gallery-filter');
+    if (header && galleryFilter) {
+        const headerHeight = header.offsetHeight;
+        // Subtract 2px to create slight overlap and prevent gap
+        galleryFilter.style.top = (headerHeight - 2) + 'px';
+    }
+    
+    // Initialize View More functionality
+    initializeViewMore();
+});
+
+// Handle window resize for View More functionality
+window.addEventListener('resize', () => {
+    initializeViewMore();
+});
+
+filterButtons.forEach(btn => {
+    btn.addEventListener('click', () => {
+        const filter = btn.getAttribute('data-filter');
+        applyFilter(filter);
+    });
+});
+
+// Lightbox
+const lightbox = document.getElementById('lightbox');
+const lightboxImage = document.getElementById('lightboxImage');
+const lightboxClose = document.getElementById('lightboxClose');
+const lightboxPrev = document.getElementById('lightboxPrev');
+const lightboxNext = document.getElementById('lightboxNext');
+
+let currentImageIndex = 0;
+let galleryImages = [];
+
+galleryItems.forEach((item, index) => {
+    const img = item.querySelector('img');
+    galleryImages.push(img.src);
+    
+    item.addEventListener('click', () => {
+        currentImageIndex = index;
+        showLightboxImage();
+        lightbox.classList.add('active');
+    });
+});
+
+function showLightboxImage() {
+    lightboxImage.src = galleryImages[currentImageIndex];
+}
+
+lightboxClose.addEventListener('click', () => {
+    lightbox.classList.remove('active');
+});
+
+lightboxPrev.addEventListener('click', () => {
+    currentImageIndex = (currentImageIndex - 1 + galleryImages.length) % galleryImages.length;
+    showLightboxImage();
+});
+
+lightboxNext.addEventListener('click', () => {
+    currentImageIndex = (currentImageIndex + 1) % galleryImages.length;
+    showLightboxImage();
+});
+
+lightbox.addEventListener('click', (e) => {
+    if (e.target === lightbox) {
+        lightbox.classList.remove('active');
+    }
+});
+
+// Keyboard navigation for lightbox
+document.addEventListener('keydown', (e) => {
+    if (lightbox.classList.contains('active')) {
+        if (e.key === 'ArrowLeft') {
+            lightboxPrev.click();
+        } else if (e.key === 'ArrowRight') {
+            lightboxNext.click();
+        } else if (e.key === 'Escape') {
+            lightbox.classList.remove('active');
+        }
+    }
+});
+
+// Color Palette Functionality
+const colorOptions = document.querySelectorAll('.color-option');
+const colorPreview = document.getElementById('colorPreview');
+
+if (colorOptions.length > 0 && colorPreview) {
+    colorOptions.forEach(option => {
+        option.addEventListener('click', function() {
+            const color = this.getAttribute('data-color');
+            
+            // Update preview
+            colorPreview.style.backgroundColor = color;
+            colorPreview.innerHTML = `<span class="color-preview-label">${color}</span>`;
+            
+            // Update active state
+            colorOptions.forEach(opt => opt.classList.remove('active'));
+            this.classList.add('active');
+        });
+    });
+}
+
+// Custom Color Picker
+const customColorPicker = document.getElementById('customColorPicker');
+const customColorValue = document.getElementById('customColorValue');
+
+if (customColorPicker && customColorValue) {
+    customColorPicker.addEventListener('input', function(e) {
+        const selectedColor = e.target.value;
+        
+        // Update the preview area
+        if (colorPreview) {
+            colorPreview.style.backgroundColor = selectedColor;
+            colorPreview.innerHTML = `<span class="color-preview-label">${selectedColor.toUpperCase()}</span>`;
+        }
+        
+        // Update the hex value display
+        customColorValue.textContent = selectedColor.toUpperCase();
+        
+        // Remove active state from preset colors
+        const colorOptions = document.querySelectorAll('.color-option');
+        colorOptions.forEach(opt => opt.classList.remove('active'));
+    });
+    
+    // Initialize the display
+    customColorValue.textContent = customColorPicker.value.toUpperCase();
+}
+    </script>
+</body>
+</html>

@@ -72,3 +72,19 @@ ENV/
 *.dll
 *.so
 *.dylib
+
+# Claude AI settings
+.claude/
+
+# Duplicate files
+* copy.*
+* copy
+
+# Large media files (over 50MB)
+*.mp4
+*.mov
+*.avi
+*.mkv
+*.wmv
+*.flv
+*.webm

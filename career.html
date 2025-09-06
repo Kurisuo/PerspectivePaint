@@ -1,0 +1,607 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Join the Perspective Paint & Design team. Career opportunities for painters, project managers, and support staff in San Diego.">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Link to external CSS file -->
+    <link rel="stylesheet" href="styles.css">
+    
+    <title>Careers - Perspective Paint & Design | Join Our Team</title>
+    
+    <style>
+/* Dark Theme Styles */
+body {
+    background: #0D0D0D;
+    color: white;
+}
+
+/* Career Hero */
+.career-hero {
+    background: linear-gradient(135deg, #0D0D0D 0%, #1A1A1A 50%, #1A2C3D 100%);
+    padding: 140px 20px 80px;
+    text-align: center;
+    color: white;
+    position: relative;
+    overflow: hidden;
+    margin-top: 80px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.career-hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('media/team-photo.jpg') center/cover;
+    opacity: 0.1;
+    z-index: 1;
+}
+
+.career-hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.career-hero h1 {
+    font-size: 48px;
+    margin-bottom: 20px;
+    font-weight: 800;
+    text-transform: uppercase;
+}
+
+.career-hero p {
+    font-size: 20px;
+    margin-bottom: 30px;
+    opacity: 0.9;
+}
+
+.btn-career {
+    background: rgba(46, 95, 141, 0.9);
+    color: white;
+    padding: 16px 36px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    text-transform: uppercase;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+}
+
+.btn-career:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.5);
+    background: rgba(46, 95, 141, 1);
+}
+
+/* Positions Section */
+.positions-section {
+    padding: 80px 20px;
+    background: linear-gradient(135deg, #0D0D0D 0%, #1A1A1A 50%, #1A2C3D 100%);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.positions-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.positions-header {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.positions-header h2 {
+    font-size: 42px;
+    color: white;
+    margin-bottom: 15px;
+    font-weight: 800;
+    text-transform: uppercase;
+}
+
+.positions-header p {
+    font-size: 18px;
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.positions-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 30px;
+    margin-bottom: 60px;
+}
+
+.position-card {
+    background: rgba(26, 26, 26, 0.6);
+    padding: 40px 30px;
+    border-radius: 10px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    transition: all 0.3s ease;
+    border: 1px solid rgba(46, 95, 141, 0.2);
+    position: relative;
+}
+
+.position-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 5px;
+    background: rgba(46, 95, 141, 0.5);
+    border-radius: 10px 10px 0 0;
+}
+
+.position-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.6);
+    background: rgba(26, 26, 26, 0.8);
+    border-color: rgba(46, 95, 141, 0.4);
+}
+
+.position-title {
+    font-size: 24px;
+    color: white;
+    margin-bottom: 10px;
+    font-weight: 700;
+}
+
+.position-type {
+    display: inline-block;
+    background: rgba(46, 95, 141, 0.9);
+    color: white;
+    padding: 5px 15px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 600;
+    text-transform: uppercase;
+    margin-bottom: 15px;
+}
+
+.position-description {
+    color: rgba(255, 255, 255, 0.7);
+    margin-bottom: 20px;
+    line-height: 1.6;
+}
+
+.position-requirements {
+    margin-bottom: 20px;
+}
+
+.position-requirements h4 {
+    font-size: 16px;
+    color: white;
+    margin-bottom: 10px;
+    font-weight: 600;
+}
+
+.position-requirements ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.position-requirements li {
+    color: rgba(255, 255, 255, 0.7);
+    margin-bottom: 5px;
+    padding-left: 20px;
+    position: relative;
+}
+
+.position-requirements li::before {
+    content: '•';
+    color: rgba(46, 95, 141, 0.9);
+    position: absolute;
+    left: 0;
+    font-weight: bold;
+}
+
+.apply-btn {
+    background: rgba(46, 95, 141, 0.9);
+    color: white;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 25px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    display: inline-block;
+    text-transform: uppercase;
+}
+
+.apply-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+    background: rgba(46, 95, 141, 1);
+}
+
+/* Benefits Section */
+.benefits-section {
+    padding: 80px 20px;
+    background: linear-gradient(135deg, #0D0D0D 0%, #1A1A1A 50%, #1A2C3D 100%);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.benefits-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.benefits-header {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.benefits-header h2 {
+    font-size: 42px;
+    color: white;
+    margin-bottom: 15px;
+    font-weight: 800;
+    text-transform: uppercase;
+}
+
+.benefits-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+}
+
+.benefit-card {
+    background: rgba(26, 26, 26, 0.6);
+    padding: 30px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    transition: all 0.3s ease;
+    border: 1px solid rgba(46, 95, 141, 0.2);
+}
+
+.benefit-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.6);
+    background: rgba(26, 26, 26, 0.8);
+    border-color: rgba(46, 95, 141, 0.4);
+}
+
+.benefit-icon {
+    width: 60px;
+    height: 60px;
+    background: rgba(46, 95, 141, 0.9);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 20px;
+    font-size: 24px;
+    color: white;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.benefit-card h3 {
+    font-size: 20px;
+    color: white;
+    margin-bottom: 10px;
+    font-weight: 700;
+}
+
+.benefit-card p {
+    color: rgba(255, 255, 255, 0.7);
+    line-height: 1.6;
+}
+
+/* CTA Section */
+.cta-section {
+    padding: 80px 20px;
+    background: linear-gradient(135deg, #0D0D0D 0%, #1A1A1A 50%, #1A2C3D 100%);
+    text-align: center;
+    color: white;
+}
+
+.cta-container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.cta-section h2 {
+    font-size: 42px;
+    margin-bottom: 20px;
+    font-weight: 800;
+    text-transform: uppercase;
+}
+
+.cta-section p {
+    font-size: 18px;
+    margin-bottom: 30px;
+    opacity: 0.9;
+}
+
+.btn-cta-primary {
+    background: rgba(46, 95, 141, 0.9);
+    color: white;
+    padding: 16px 36px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    text-transform: uppercase;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+    margin: 0 10px;
+}
+
+.btn-cta-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.5);
+    background: rgba(46, 95, 141, 1);
+}
+
+.btn-cta-secondary {
+    background: transparent;
+    color: white;
+    padding: 16px 36px;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    text-transform: uppercase;
+    margin: 0 10px;
+}
+
+.btn-cta-secondary:hover {
+    background: rgba(255, 255, 255, 0.1);
+    border-color: rgba(255, 255, 255, 0.5);
+    transform: translateY(-2px);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .career-hero h1 {
+        font-size: 36px;
+    }
+    
+    .positions-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .benefits-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .cta-section .btn {
+        display: block;
+        margin: 10px auto;
+        max-width: 250px;
+    }
+}
+
+@media (max-width: 480px) {
+    .career-hero h1 {
+        font-size: 28px;
+    }
+    
+    .position-card {
+        padding: 30px 20px;
+    }
+}
+    </style>
+</head>
+
+<body>
+    <header id="header">
+        <div class="header-content">
+            <a href="index.html" class="main-logo" id="logoLink">
+                <img src="media/perspective-logo-old.png" alt="Perspective Paint & Design Logo">
+                <div class="company-name">
+                    <span class="perspective">PERSPECTIVE</span>
+                    <span class="painting">PAINT & DESIGN</span>
+                </div>
+            </a>
+            
+            <nav class="nav-container">
+                <div class="nav-menu">
+                    <a href="index.html#about" class="nav-link">About</a>
+                    <a href="index.html#services" class="nav-link">Services</a>
+                    <a href="gallery.html" class="nav-link">Gallery</a>
+                    <a href="index.html#team" class="nav-link">Team</a>
+                    <a href="index.html#testimonials" class="nav-link">Reviews</a>
+                    <a href="contact.html" class="nav-link">Contact</a>
+                </div>
+                <div class="header-cta-buttons">
+                    <a href="tel:6198184816" class="phone-btn">
+                        <i class="fa-solid fa-phone"></i> (619) 818-4816
+                    </a>
+                    <a href="contact.html#estimate" class="quote-btn">FREE ESTIMATE</a>
+                </div>
+            </nav>
+            
+            <button class="mobile-menu-btn">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </header>
+
+    <main>
+        <section class="career-hero">
+            <div class="career-hero-content">
+                <h1>Join Our Team</h1>
+                <p>Build your career with San Diego's premier painting company</p>
+                <a href="#positions" class="btn-career">
+                    <i class="fa-solid fa-briefcase"></i> View Open Positions
+                </a>
+            </div>
+        </section>
+
+        <section class="positions-section" id="positions">
+            <div class="positions-container">
+                <div class="positions-header">
+                    <h2>Open Positions</h2>
+                    <p>We're always looking for talented individuals to join our growing team</p>
+                </div>
+                
+                <div class="positions-grid">
+                    <div class="position-card">
+                        <div class="position-type">Full-Time</div>
+                        <h3 class="position-title">Experienced Painter</h3>
+                        <p class="position-description">Join our team of professional painters working on high-quality residential and commercial projects throughout San Diego.</p>
+                        
+                        <div class="position-requirements">
+                            <h4>Requirements:</h4>
+                            <ul>
+                                <li>2+ years of professional painting experience</li>
+                                <li>Knowledge of various painting techniques</li>
+                                <li>Reliable transportation</li>
+                                <li>Strong attention to detail</li>
+                                <li>Team player with good communication skills</li>
+                            </ul>
+                        </div>
+                        
+                        <a href="contact.html#hiring" class="apply-btn">Apply Now</a>
+                    </div>
+                    
+                    <div class="position-card">
+                        <div class="position-type">Full-Time</div>
+                        <h3 class="position-title">Project Manager</h3>
+                        <p class="position-description">Lead painting projects from start to finish, ensuring quality workmanship and customer satisfaction.</p>
+                        
+                        <div class="position-requirements">
+                            <h4>Requirements:</h4>
+                            <ul>
+                                <li>3+ years of project management experience</li>
+                                <li>Construction or painting industry background</li>
+                                <li>Excellent organizational skills</li>
+                                <li>Strong customer service abilities</li>
+                                <li>Bilingual (English/Spanish) preferred</li>
+                            </ul>
+                        </div>
+                        
+                        <a href="contact.html#hiring" class="apply-btn">Apply Now</a>
+                    </div>
+                    
+                    <div class="position-card">
+                        <div class="position-type">Part-Time</div>
+                        <h3 class="position-title">Painting Assistant</h3>
+                        <p class="position-description">Entry-level position perfect for those looking to start a career in the painting industry.</p>
+                        
+                        <div class="position-requirements">
+                            <h4>Requirements:</h4>
+                            <ul>
+                                <li>Willingness to learn and work hard</li>
+                                <li>Reliable and punctual</li>
+                                <li>Physical stamina for manual labor</li>
+                                <li>Valid driver's license preferred</li>
+                                <li>No experience required - we'll train!</li>
+                            </ul>
+                        </div>
+                        
+                        <a href="contact.html#hiring" class="apply-btn">Apply Now</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="benefits-section">
+            <div class="benefits-container">
+                <div class="benefits-header">
+                    <h2>Why Work With Us?</h2>
+                </div>
+                
+                <div class="benefits-grid">
+                    <div class="benefit-card">
+                        <div class="benefit-icon">
+                            <i class="fa-solid fa-dollar-sign"></i>
+                        </div>
+                        <h3>Competitive Pay</h3>
+                        <p>We offer competitive wages with opportunities for raises based on performance and experience.</p>
+                    </div>
+                    
+                    <div class="benefit-card">
+                        <div class="benefit-icon">
+                            <i class="fa-solid fa-graduation-cap"></i>
+                        </div>
+                        <h3>Training & Development</h3>
+                        <p>Continuous training opportunities to improve your skills and advance your career.</p>
+                    </div>
+                    
+                    <div class="benefit-card">
+                        <div class="benefit-icon">
+                            <i class="fa-solid fa-users"></i>
+                        </div>
+                        <h3>Great Team</h3>
+                        <p>Work with a supportive team of professionals who value quality and customer satisfaction.</p>
+                    </div>
+                    
+                    <div class="benefit-card">
+                        <div class="benefit-icon">
+                            <i class="fa-solid fa-clock"></i>
+                        </div>
+                        <h3>Flexible Hours</h3>
+                        <p>We offer flexible scheduling options to accommodate your lifestyle and commitments.</p>
+                    </div>
+                    
+                    <div class="benefit-card">
+                        <div class="benefit-icon">
+                            <i class="fa-solid fa-shield-halved"></i>
+                        </div>
+                        <h3>Safe Environment</h3>
+                        <p>We prioritize safety with proper equipment, training, and protocols for all team members.</p>
+                    </div>
+                    
+                    <div class="benefit-card">
+                        <div class="benefit-icon">
+                            <i class="fa-solid fa-chart-line"></i>
+                        </div>
+                        <h3>Growth Opportunities</h3>
+                        <p>Clear career progression paths with opportunities to advance within the company.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="cta-section">
+            <div class="cta-container">
+                <h2>Ready to Join Our Team?</h2>
+                <p>Don't see a position that fits? We're always interested in hearing from talented individuals.</p>
+                <a href="contact.html#hiring" class="btn-cta-primary">
+                    <i class="fa-solid fa-paper-plane"></i> Send Your Resume
+                </a>
+                <a href="tel:6198184816" class="btn-cta-secondary">
+                    <i class="fa-solid fa-phone"></i> Call Us
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <!-- Link to external JavaScript file -->
+    <script src="script.js"></script>
+    
+    <script>
+    // Smooth scroll to positions when clicking "View Open Positions"
+    document.querySelector('a[href="#positions"]').addEventListener('click', function(e) {
+        e.preventDefault();
+        document.getElementById('positions').scrollIntoView({ behavior: 'smooth' });
+    });
+    </script>
+</body>
+</html>

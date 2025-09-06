@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Thank you for contacting Perspective Paint & Design. We'll be in touch soon with your free estimate.">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Link to external CSS file -->
+    <link rel="stylesheet" href="styles.css">
+    
+    <title>Thank You - Perspective Paint & Design | Form Submitted Successfully</title>
+    
+    <style>
+/* Dark Theme Styles */
+body {
+    background: #0D0D0D;
+    color: white;
+}
+
+/* Confirmation Hero */
+.confirmation-hero {
+    background: linear-gradient(135deg, #0D0D0D 0%, #1A1A1A 50%, #1A2C3D 100%);
+    padding: 140px 20px 80px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    margin-top: 80px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.confirmation-hero::before {
+    content: '';
+    position: absolute;
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(circle, rgba(46, 95, 141, 0.05) 0%, transparent 60%);
+    border-radius: 50%;
+    top: -300px;
+    right: -300px;
+}
+
+.confirmation-content {
+    position: relative;
+    z-index: 2;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.success-icon {
+    width: 120px;
+    height: 120px;
+    background: rgba(46, 95, 141, 0.9);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 30px;
+    font-size: 48px;
+    color: white;
+    animation: successPulse 2s ease-in-out infinite;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+}
+
+@keyframes successPulse {
+    0%, 100% {
+        transform: scale(1);
+        box-shadow: 0 0 0 0 rgba(46, 95, 141, 0.7);
+    }
+    50% {
+        transform: scale(1.05);
+        box-shadow: 0 0 0 20px rgba(46, 95, 141, 0);
+    }
+}
+
+.confirmation-hero h1 {
+    font-size: 48px;
+    margin-bottom: 20px;
+    font-weight: 800;
+    text-transform: uppercase;
+    color: white;
+}
+
+.confirmation-hero p {
+    font-size: 20px;
+    margin-bottom: 30px;
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.confirmation-actions {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 40px;
+}
+
+.btn-confirm-primary {
+    background: rgba(46, 95, 141, 0.9);
+    color: white;
+    padding: 16px 36px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    text-transform: uppercase;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+}
+
+.btn-confirm-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.5);
+    background: rgba(46, 95, 141, 1);
+}
+
+.btn-confirm-secondary {
+    background: transparent;
+    color: white;
+    padding: 16px 36px;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    text-transform: uppercase;
+}
+
+.btn-confirm-secondary:hover {
+    background: rgba(255, 255, 255, 0.1);
+    border-color: rgba(255, 255, 255, 0.5);
+    transform: translateY(-2px);
+}
+
+/* Next Steps Section */
+.next-steps-section {
+    padding: 80px 20px;
+    background: linear-gradient(135deg, #0D0D0D 0%, #1A1A1A 50%, #1A2C3D 100%);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.next-steps-container {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.next-steps-header {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.next-steps-header h2 {
+    font-size: 42px;
+    color: white;
+    margin-bottom: 15px;
+    font-weight: 800;
+    text-transform: uppercase;
+}
+
+.next-steps-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.step-card {
+    background: rgba(26, 26, 26, 0.6);
+    padding: 40px 30px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    transition: all 0.3s ease;
+    border: 1px solid rgba(46, 95, 141, 0.2);
+    position: relative;
+}
+
+.step-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 5px;
+    background: rgba(46, 95, 141, 0.5);
+    border-radius: 10px 10px 0 0;
+}
+
+.step-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.6);
+    background: rgba(26, 26, 26, 0.8);
+    border-color: rgba(46, 95, 141, 0.4);
+}
+
+.step-number {
+    width: 60px;
+    height: 60px;
+    background: rgba(46, 95, 141, 0.9);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 20px;
+    font-size: 24px;
+    color: white;
+    font-weight: bold;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.step-card h3 {
+    font-size: 24px;
+    color: white;
+    margin-bottom: 15px;
+    font-weight: 700;
+}
+
+.step-card p {
+    color: rgba(255, 255, 255, 0.7);
+    line-height: 1.6;
+}
+
+/* Contact Info Section */
+.contact-info-section {
+    padding: 80px 20px;
+    background: linear-gradient(135deg, #0D0D0D 0%, #1A1A1A 50%, #1A2C3D 100%);
+}
+
+.contact-info-container {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.contact-info-container h2 {
+    font-size: 36px;
+    color: white;
+    margin-bottom: 20px;
+    font-weight: 700;
+}
+
+.contact-info-container p {
+    font-size: 18px;
+    color: rgba(255, 255, 255, 0.7);
+    margin-bottom: 30px;
+}
+
+.contact-methods {
+    display: flex;
+    gap: 30px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.contact-method {
+    background: rgba(26, 26, 26, 0.8);
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    transition: all 0.3s ease;
+    min-width: 200px;
+    border: 1px solid rgba(46, 95, 141, 0.2);
+}
+
+.contact-method:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.6);
+    background: rgba(26, 26, 26, 0.9);
+    border-color: rgba(46, 95, 141, 0.4);
+}
+
+.contact-method i {
+    font-size: 32px;
+    color: rgba(46, 95, 141, 0.9);
+    margin-bottom: 15px;
+}
+
+.contact-method h3 {
+    font-size: 18px;
+    color: white;
+    margin-bottom: 10px;
+    font-weight: 600;
+}
+
+.contact-method a {
+    color: rgba(46, 95, 141, 0.9);
+    text-decoration: none;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.contact-method a:hover {
+    color: white;
+}
+
+.contact-method p {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .confirmation-hero h1 {
+        font-size: 36px;
+    }
+    
+    .confirmation-actions {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .next-steps-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .contact-methods {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .confirmation-hero h1 {
+        font-size: 28px;
+    }
+    
+    .success-icon {
+        width: 100px;
+        height: 100px;
+        font-size: 40px;
+    }
+}
+    </style>
+</head>
+
+<body>
+    <header id="header">
+        <div class="header-content">
+            <a href="index.html" class="main-logo" id="logoLink">
+                <img src="media/perspective-logo-old.png" alt="Perspective Paint & Design Logo">
+                <div class="company-name">
+                    <span class="perspective">PERSPECTIVE</span>
+                    <span class="painting">PAINT & DESIGN</span>
+                </div>
+            </a>
+            
+            <nav class="nav-container">
+                <div class="nav-menu">
+                    <a href="index.html#about" class="nav-link">About</a>
+                    <a href="index.html#services" class="nav-link">Services</a>
+                    <a href="gallery.html" class="nav-link">Gallery</a>
+                    <a href="index.html#team" class="nav-link">Team</a>
+                    <a href="index.html#testimonials" class="nav-link">Reviews</a>
+                    <a href="contact.html" class="nav-link">Contact</a>
+                </div>
+                <div class="header-cta-buttons">
+                    <a href="tel:6198184816" class="phone-btn">
+                        <i class="fa-solid fa-phone"></i> (619) 818-4816
+                    </a>
+                    <a href="contact.html#estimate" class="quote-btn">FREE ESTIMATE</a>
+                </div>
+            </nav>
+            
+            <button class="mobile-menu-btn">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </header>
+
+    <main>
+        <section class="confirmation-hero">
+            <div class="confirmation-content">
+                <div class="success-icon">
+                    <i class="fa-solid fa-check"></i>
+                </div>
+                <h1>Thank You!</h1>
+                <p>Your form has been submitted successfully. We'll be in touch with you within 24 hours.</p>
+                
+                <div class="confirmation-actions">
+                    <a href="index.html" class="btn-confirm-primary">
+                        <i class="fa-solid fa-home"></i> Back to Home
+                    </a>
+                    <a href="gallery.html" class="btn-confirm-secondary">
+                        <i class="fa-solid fa-images"></i> View Our Gallery
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <section class="next-steps-section">
+            <div class="next-steps-container">
+                <div class="next-steps-header">
+                    <h2>What Happens Next?</h2>
+                </div>
+                
+                <div class="next-steps-grid">
+                    <div class="step-card">
+                        <div class="step-number">1</div>
+                        <h3>Review Your Request</h3>
+                        <p>Our team will carefully review your project details and requirements to provide the most accurate estimate.</p>
+                    </div>
+                    
+                    <div class="step-card">
+                        <div class="step-number">2</div>
+                        <h3>Contact You</h3>
+                        <p>We'll reach out within 24 hours to discuss your project, answer questions, and schedule a consultation if needed.</p>
+                    </div>
+                    
+                    <div class="step-card">
+                        <div class="step-number">3</div>
+                        <h3>Provide Estimate</h3>
+                        <p>You'll receive a detailed, itemized estimate with transparent pricing and no hidden fees.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="contact-info-section">
+            <div class="contact-info-container">
+                <h2>Need to Reach Us Sooner?</h2>
+                <p>If you have urgent questions or need immediate assistance, feel free to contact us directly.</p>
+                
+                <div class="contact-methods">
+                    <div class="contact-method">
+                        <i class="fa-solid fa-phone"></i>
+                        <h3>Call Us</h3>
+                        <a href="tel:6198184816">(619) 818-4816</a>
+                    </div>
+                    
+                    <div class="contact-method">
+                        <i class="fa-solid fa-envelope"></i>
+                        <h3>Email Us</h3>
+                        <a href="mailto:hall.jon12@gmail.com">hall.jon12@gmail.com</a>
+                    </div>
+                    
+                    <div class="contact-method">
+                        <i class="fa-solid fa-clock"></i>
+                        <h3>Business Hours</h3>
+                        <p>Mon-Fri: 7am-6pm<br>Sat: 8am-4pm</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Link to external JavaScript file -->
+    <script src="script.js"></script>
+    
+    <script>
+    // Auto-redirect after 10 seconds (optional)
+    setTimeout(() => {
+        if (confirm('Would you like to return to the homepage?')) {
+            window.location.href = 'index.html';
+        }
+    }, 10000);
+    </script>
+</body>
+</html>
