@@ -11,6 +11,9 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
+    <!-- Link to external CSS file -->
+    <link rel="stylesheet" href="../styles.css">
+    
     <title>Gallery - Perspective Painting | San Diego Painting Portfolio</title>
     
     <style>
@@ -1940,8 +1943,9 @@ function applyFilter(filter) {
     // Adjust grid columns based on visible items for certain categories
     const galleryGrid = document.getElementById('galleryGrid');
     const fewItemCategories = ['cabinet', 'small-business', 'mural'];
+    const itemsVisibleNow = Array.from(galleryItems).filter(item => item.style.display !== 'none');
     
-    if (fewItemCategories.includes(filter) || visibleCount <= 6) {
+    if (fewItemCategories.includes(filter) || itemsVisibleNow.length <= 6) {
         galleryGrid.classList.add('grid-three-columns');
     } else {
         galleryGrid.classList.remove('grid-three-columns');
@@ -2091,5 +2095,8 @@ if (customColorPicker && customColorValue) {
     customColorValue.textContent = customColorPicker.value.toUpperCase();
 }
     </script>
+    
+    <!-- Main JavaScript -->
+    <script src="../script.js"></script>
 </body>
 </html>

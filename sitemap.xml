@@ -10,7 +10,7 @@
     
     <!-- Gallery Page -->
     <url>
-        <loc>https://www.perspectivepaint.com/gallery.html</loc>
+        <loc>https://www.perspectivepaint.com/pages/Gallery.html</loc>
         <lastmod>2025-01-28</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
@@ -18,7 +18,7 @@
     
     <!-- Contact Page -->
     <url>
-        <loc>https://www.perspectivepaint.com/contact.html</loc>
+        <loc>https://www.perspectivepaint.com/pages/Contact.html</loc>
         <lastmod>2025-01-28</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.9</priority>
@@ -26,7 +26,7 @@
     
     <!-- Estimate Page -->
     <url>
-        <loc>https://www.perspectivepaint.com/estimate.html</loc>
+        <loc>https://www.perspectivepaint.com/pages/estimate.html</loc>
         <lastmod>2025-01-28</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.9</priority>
@@ -34,7 +34,7 @@
     
     <!-- Career Page -->
     <url>
-        <loc>https://www.perspectivepaint.com/career.html</loc>
+        <loc>https://www.perspectivepaint.com/pages/career.html</loc>
         <lastmod>2025-01-28</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>

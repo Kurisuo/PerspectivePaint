@@ -12,10 +12,11 @@
             DEBOUNCE_DELAY: 250
         },
         BREAKPOINTS: {
-            MOBILE: 480,
-            TABLET: 768,
-            DESKTOP: 1024,
-            LARGE: 1200
+            SMALL_MOBILE: 479,
+            MOBILE: 767,
+            TABLET: 1023,
+            DESKTOP: 1439,
+            LARGE: 1440
         },
         VIDEO: {
             SEEK_SECONDS: 5,
@@ -132,10 +133,13 @@
 
             if (!state.mobile.menuBtn || !state.mobile.navContainer) return;
 
-            // Create overlay
-            state.mobile.overlay = document.createElement('div');
-            state.mobile.overlay.className = 'mobile-menu-overlay';
-            document.body.appendChild(state.mobile.overlay);
+            // Create overlay if it doesn't exist
+            state.mobile.overlay = utils.safeQuery('.mobile-menu-overlay');
+            if (!state.mobile.overlay) {
+                state.mobile.overlay = document.createElement('div');
+                state.mobile.overlay.className = 'mobile-menu-overlay';
+                document.body.appendChild(state.mobile.overlay);
+            }
 
             // Toggle menu
             state.mobile.menuBtn.addEventListener('click', (e) => {
@@ -296,6 +300,18 @@
                 video.play().catch(err => {
                     console.log('Auto-play prevented:', err);
                     this.showPlayButton();
+                    
+                    // Try to play on first user interaction
+                    const playOnInteraction = () => {
+                        video.play().then(() => {
+                            this.showPauseButton();
+                            document.removeEventListener('click', playOnInteraction);
+                            document.removeEventListener('touchstart', playOnInteraction);
+                        }).catch(e => console.log('Play failed:', e));
+                    };
+                    
+                    document.addEventListener('click', playOnInteraction, { once: true });
+                    document.addEventListener('touchstart', playOnInteraction, { once: true });
                 });
             }, { once: true });
         },
@@ -482,6 +498,17 @@
             }
         },
 
+        showPauseButton: function() {
+            const control = state.video.control;
+            if (control) {
+                const icon = control.querySelector('i');
+                if (icon) {
+                    icon.classList.remove('fa-play');
+                    icon.classList.add('fa-pause');
+                }
+            }
+        },
+
         showError: function(message) {
             console.error(message);
             // Could add user-facing error display here
@@ -512,6 +539,7 @@
             
             this.setupControls();
             this.setupThumbnails();
+            this.setupTouchSupport();
             this.startAutoPlay();
         },
 
@@ -537,6 +565,53 @@
                     this.showSlider();
                 });
             });
+        },
+
+        setupTouchSupport: function() {
+            const slider = utils.safeQuery('.slider');
+            if (!slider) return;
+            
+            let touchStartX = 0;
+            let touchEndX = 0;
+            let isDragging = false;
+            
+            slider.addEventListener('touchstart', (e) => {
+                touchStartX = e.changedTouches[0].screenX;
+                isDragging = true;
+                this.stopAutoPlay();
+            }, { passive: true });
+            
+            slider.addEventListener('touchmove', (e) => {
+                if (!isDragging) return;
+                touchEndX = e.changedTouches[0].screenX;
+            }, { passive: true });
+            
+            slider.addEventListener('touchend', (e) => {
+                if (!isDragging) return;
+                isDragging = false;
+                touchEndX = e.changedTouches[0].screenX;
+                this.handleSwipe(touchStartX, touchEndX);
+                this.startAutoPlay();
+            }, { passive: true });
+        },
+
+        handleSwipe: function(startX, endX) {
+            const threshold = 50; // Minimum swipe distance
+            const diff = startX - endX;
+            
+            if (Math.abs(diff) > threshold) {
+                if (diff > 0) {
+                    // Swipe left - next slide
+                    state.gallery.itemActive = (state.gallery.itemActive + 1) % state.gallery.countItem;
+                } else {
+                    // Swipe right - previous slide
+                    state.gallery.itemActive = state.gallery.itemActive - 1;
+                    if (state.gallery.itemActive < 0) {
+                        state.gallery.itemActive = state.gallery.countItem - 1;
+                    }
+                }
+                this.showSlider();
+            }
         },
 
         showSlider: function() {
@@ -584,6 +659,7 @@
             
             this.setupControls();
             this.setupCardInteractions();
+            this.setupTouchSupport();
             this.updateView();
             
             // Handle resize with debounce
@@ -648,11 +724,56 @@
             });
         },
 
+        setupTouchSupport: function() {
+            const container = utils.safeQuery('.team-carousel-container');
+            if (!container) return;
+            
+            let touchStartX = 0;
+            let touchEndX = 0;
+            let isDragging = false;
+            
+            container.addEventListener('touchstart', (e) => {
+                touchStartX = e.changedTouches[0].screenX;
+                isDragging = true;
+            }, { passive: true });
+            
+            container.addEventListener('touchmove', (e) => {
+                if (!isDragging) return;
+                touchEndX = e.changedTouches[0].screenX;
+            }, { passive: true });
+            
+            container.addEventListener('touchend', (e) => {
+                if (!isDragging) return;
+                isDragging = false;
+                touchEndX = e.changedTouches[0].screenX;
+                this.handleTeamSwipe(touchStartX, touchEndX);
+            }, { passive: true });
+        },
+
+        handleTeamSwipe: function(startX, endX) {
+            const threshold = 50;
+            const diff = startX - endX;
+            const maxSlides = this.getMaxSlides();
+            
+            if (Math.abs(diff) > threshold) {
+                if (diff > 0 && state.team.currentSlide < maxSlides - 1) {
+                    // Swipe left - next
+                    state.team.currentSlide++;
+                    this.updateView();
+                } else if (diff < 0 && state.team.currentSlide > 0) {
+                    // Swipe right - previous
+                    state.team.currentSlide--;
+                    this.updateView();
+                }
+            }
+        },
+
         getVisibleCards: function() {
             const width = window.innerWidth;
-            if (width > CONFIG.BREAKPOINTS.LARGE) return CONFIG.CAROUSEL.TEAM_CARDS_LARGE;
+            if (width >= CONFIG.BREAKPOINTS.LARGE) return CONFIG.CAROUSEL.TEAM_CARDS_LARGE;
             if (width > CONFIG.BREAKPOINTS.TABLET) return CONFIG.CAROUSEL.TEAM_CARDS_DESKTOP;
             if (width > CONFIG.BREAKPOINTS.MOBILE) return CONFIG.CAROUSEL.TEAM_CARDS_TABLET;
+            if (width > CONFIG.BREAKPOINTS.SMALL_MOBILE) return CONFIG.CAROUSEL.TEAM_CARDS_MOBILE;
             return CONFIG.CAROUSEL.TEAM_CARDS_MOBILE;
         },
 

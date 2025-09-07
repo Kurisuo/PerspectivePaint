@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>CSS/JS Minifier</title>
+    <meta charset="UTF-8">
+</head>
+<body>
+    <h1>Minification Tool</h1>
+    <p>This is a simple minification helper. For production, use proper build tools.</p>
+    
+    <h2>CSS Minification</h2>
+    <textarea id="css-input" placeholder="Paste CSS here" rows="10" cols="80"></textarea><br>
+    <button onclick="minifyCSS()">Minify CSS</button><br>
+    <textarea id="css-output" placeholder="Minified CSS" rows="10" cols="80"></textarea>
+    
+    <h2>JS Minification</h2>
+    <textarea id="js-input" placeholder="Paste JS here" rows="10" cols="80"></textarea><br>
+    <button onclick="minifyJS()">Minify JS</button><br>
+    <textarea id="js-output" placeholder="Minified JS" rows="10" cols="80"></textarea>
+    
+    <script>
+    function minifyCSS() {
+        let css = document.getElementById('css-input').value;
+        // Remove comments
+        css = css.replace(/\/\*[\s\S]*?\*\//g, '');
+        // Remove unnecessary whitespace
+        css = css.replace(/\s+/g, ' ');
+        // Remove spaces around specific characters
+        css = css.replace(/\s*([{}:;,])\s*/g, '$1');
+        // Remove trailing semicolon before closing brace
+        css = css.replace(/;}/g, '}');
+        // Remove leading/trailing whitespace
+        css = css.trim();
+        document.getElementById('css-output').value = css;
+    }
+    
+    function minifyJS() {
+        let js = document.getElementById('js-input').value;
+        // Basic minification (for production use proper tools like Terser)
+        // Remove single-line comments
+        js = js.replace(/\/\/.*$/gm, '');
+        // Remove multi-line comments
+        js = js.replace(/\/\*[\s\S]*?\*\//g, '');
+        // Remove excessive whitespace
+        js = js.replace(/\s+/g, ' ');
+        // Remove spaces around operators where safe
+        js = js.replace(/\s*([=+\-*/%<>!&|,;:{}()\[\]])\s*/g, '$1');
+        // Restore necessary spaces
+        js = js.replace(/(\w)([=+\-*/%<>!&|])/g, '$1 $2');
+        js = js.replace(/([=+\-*/%<>!&|])(\w)/g, '$1 $2');
+        // Remove leading/trailing whitespace
+        js = js.trim();
+        document.getElementById('js-output').value = js;
+    }
+    </script>
+</body>
+</html>

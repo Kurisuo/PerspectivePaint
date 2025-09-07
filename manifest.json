@@ -1,0 +1,41 @@
+{
+  "name": "Perspective Paint & Design",
+  "short_name": "Perspective Paint",
+  "description": "San Diego's Premier Painting Company - Professional Interior & Exterior Painting Services",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0a0a0a",
+  "theme_color": "#FF6B00",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "/media/perspective-logo-old.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/media/perspective-logo-old.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ],
+  "categories": ["business", "productivity"],
+  "shortcuts": [
+    {
+      "name": "Get Quote",
+      "url": "/pages/estimate.html",
+      "description": "Get a free painting estimate"
+    },
+    {
+      "name": "Gallery",
+      "url": "/pages/Gallery.html",
+      "description": "View our work portfolio"
+    },
+    {
+      "name": "Contact",
+      "url": "/pages/Contact.html",
+      "description": "Contact us"
+    }
+  ]
+}

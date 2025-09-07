@@ -1041,11 +1041,12 @@ header.scrolled {
 }
 
 .services-grid {
-    max-width: 1200px;
+    max-width: 1400px; /* Increased from 1200px */
     margin: 60px auto 0;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-    gap: 25px;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 30px; /* Increased gap for better spacing */
+    padding: 0 20px; /* Add padding for edge spacing */
 }
 
 .service-card {
@@ -1140,39 +1141,45 @@ header.scrolled {
 }
 
 .about-container {
-    max-width: 1200px;
+    max-width: 1600px; /* Much wider container */
     margin: 0 auto;
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 80px;
+    grid-template-columns: 1.5fr 1fr; /* 60/40 split - larger left side */
+    gap: 60px; /* Reduced gap for more image space */
     align-items: center;
+    padding: 0 40px; /* Add padding for edge spacing */
 }
 
 .about-image {
     position: relative;
+    height: 100%; /* Full height */
+    min-height: 500px; /* Minimum height for impact */
 }
 
 .about-image img {
     width: 100%;
+    height: 100%;
+    object-fit: cover; /* Cover the entire container */
     border-radius: 10px;
     box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5), 0 0 30px rgba(46, 95, 141, 0.2);
 }
 
 .about-badge {
     position: absolute;
-    bottom: -20px;
-    right: -20px;
-    background: rgba(46, 95, 141, 0.9);
+    bottom: 30px; /* Moved up to stay within image bounds */
+    right: 30px; /* Moved in to stay within image bounds */
+    background: rgba(46, 95, 141, 0.95);
     color: white;
-    width: 150px;
-    height: 150px;
+    width: 160px; /* Slightly larger */
+    height: 160px;
     border-radius: 50%;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
-    border: 2px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.5);
+    border: 3px solid rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
 }
 
 .about-badge .number {
@@ -1778,8 +1785,8 @@ header.scrolled {
 
 .team-image {
     position: relative;
-    height: 420px;
-    min-height: 420px; /* Maintain minimum height on all screens */
+    height: 460px;
+    min-height: 460px; /* Maintain minimum height on all screens */
     overflow: hidden;
     background: rgba(0, 0, 0, 0.3);
     border-radius: 0;
@@ -2050,7 +2057,7 @@ header.scrolled {
     grid-template-columns: repeat(2, 1fr);
     gap: 30px;
     margin-bottom: 50px;
-    align-items: start; /* Allow cards to have different heights */
+    align-items: stretch;
 }
 
 .testimonial-card {
@@ -2066,7 +2073,7 @@ header.scrolled {
     border-left: 4px solid rgba(46, 95, 141, 0.6);
     transition: all 0.3s ease;
     overflow: hidden;
-    height: auto; /* Ensure dynamic height */
+    height: 100%;
 }
 
 .testimonial-card::after {
@@ -2109,6 +2116,8 @@ header.scrolled {
     border-radius: 10px;
     height: 100%;
     box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
 }
 
 .testimonial-content::before {
@@ -2199,6 +2208,7 @@ header.scrolled {
     display: block;
     border-top: 1px solid #E0E0E0;
     padding-top: 20px;
+    margin-top: auto;
 }
 
 .author-name {
@@ -3215,8 +3225,13 @@ footer::after {
     }
     
     .services-grid {
-        grid-template-columns: repeat(3, 1fr) ; /* 3 columns for 6 cards */
-        gap: 20px;
+        grid-template-columns: repeat(2, 1fr) ; /* 2 wider columns on tablets */
+        gap: 25px;
+        max-width: 900px;
+    }
+    
+    .service-card {
+        height: 380px; /* Slightly taller on tablets */
     }
 }
 
@@ -3251,7 +3266,13 @@ footer::after {
     }
     
     .services-grid {
-        grid-template-columns: repeat(4, 1fr); /* Ensure 4 columns for 8 cards */
+        grid-template-columns: repeat(4, 1fr); /* 4 columns for 8 cards */
+        max-width: 1600px; /* Wider container for larger cards */
+        gap: 35px; /* Increased spacing */
+    }
+    
+    .service-card {
+        height: 450px; /* Taller cards for better proportions */
     }
     
     /* Taller header for bigger screens */
@@ -3323,8 +3344,8 @@ footer::after {
     
     /* Maintain team image height on larger screens */
     .team-image {
-        height: 450px;
-        min-height: 450px;
+        height: 490px;
+        min-height: 490px;
     }
 }
 
@@ -3893,10 +3914,14 @@ footer::after {
     .services-grid {
         grid-template-columns: 1fr;
         gap: 20px;
+        padding: 0 15px; /* Add padding on mobile */
     }
     
     .service-card {
-        height: 300px;
+        height: 350px; /* Taller cards on mobile for better content display */
+        width: 100%; /* Full width on mobile */
+        max-width: 500px; /* But not too wide */
+        margin: 0 auto; /* Center if narrower than container */
     }
     
     /* Hide specific service cards on mobile */
@@ -3980,7 +4005,7 @@ footer::after {
     }
     
     .team-image {
-        height: 380px;
+        height: 410px;
     }
     
     .cta-header h2 {
@@ -4659,4 +4684,173 @@ footer {
 .header-content {
     max-width: 100% ;
     overflow: hidden ;
+}
+/* Extra large screens (1600px+) for maximum width */
+@media (min-width: 1600px) {
+    .services-grid {
+        max-width: 1800px;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 40px;
+    }
+    
+    .service-card {
+        height: 500px;
+    }
+}
+
+/* Process Grid - Center last two items on large screens */
+@media (min-width: 1024px) {
+    .process-grid {
+        grid-template-columns: repeat(4, 1fr); /* 4 columns for first 4 items */
+    }
+}
+
+@media (min-width: 1200px) {
+    .process-grid {
+        grid-template-columns: repeat(5, 1fr); /* 5 columns for first 5 items */
+        position: relative;
+    }
+    
+    /* Make the 6th and 7th items span and center */
+    .process-step:nth-child(6) {
+        grid-column: 2 / span 2; /* Start from column 2, span 2 columns */
+    }
+    
+    .process-step:nth-child(7) {
+        grid-column: 3 / span 2; /* Start from column 3, span 2 columns */
+    }
+}
+
+/* Alternative approach for very large screens */
+@media (min-width: 1400px) {
+    .process-grid {
+        display: grid;
+        grid-template-columns: repeat(7, 1fr); /* Show all 7 in one row if space allows */
+        gap: 30px;
+        max-width: 1400px;
+    }
+    
+    .process-step:nth-child(6),
+    .process-step:nth-child(7) {
+        grid-column: auto; /* Reset to normal flow */
+    }
+}
+
+/* For extra large screens, use flexbox for last row */
+@media (min-width: 1600px) and (max-width: 1799px) {
+    .process-grid {
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        gap: 40px;
+    }
+    
+    .process-step:nth-child(6) {
+        grid-column: 2 / span 2;
+    }
+    
+    .process-step:nth-child(7) {
+        grid-column: 4 / span 2;
+    }
+}
+
+/* Process Grid Centering for Large Screens */
+@media (min-width: 1200px) and (max-width: 1599px) {
+    .process-grid {
+        display: grid;
+        grid-template-columns: repeat(5, 1fr); /* 5 columns for first row */
+        gap: 40px;
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+    
+    /* Center the 6th and 7th items in the second row */
+    .process-step:nth-child(6) {
+        grid-column: 2 / span 2; /* Start at column 2, span 2 columns */
+    }
+    
+    .process-step:nth-child(7) {
+        grid-column: 4 / span 2; /* Start at column 4, span 2 columns */
+    }
+}
+
+/* Extra large screens - show all 7 in one row */
+@media (min-width: 1600px) {
+    .process-grid {
+        grid-template-columns: repeat(7, 1fr) !important; /* All 7 in one row */
+        max-width: 1600px;
+    }
+    
+    .process-step:nth-child(6),
+    .process-step:nth-child(7) {
+        grid-column: auto !important; /* Reset to normal flow */
+    }
+}
+
+/* About Section Responsive Updates */
+@media (min-width: 1200px) {
+    .about-container {
+        grid-template-columns: 1.3fr 1fr; /* Even more space for image on large screens */
+    }
+    
+    .about-image {
+        min-height: 600px; /* Taller on large screens */
+    }
+}
+
+@media (max-width: 1024px) {
+    .about-container {
+        grid-template-columns: 1fr 1fr; /* Equal split on tablets */
+        gap: 40px;
+        padding: 0 20px;
+    }
+    
+    .about-image {
+        min-height: 400px;
+    }
+}
+
+@media (max-width: 768px) {
+    .about-container {
+        grid-template-columns: 1fr; /* Stack on mobile */
+        gap: 30px;
+        padding: 0 15px;
+    }
+    
+    .about-image {
+        min-height: 350px;
+        max-height: 500px;
+    }
+    
+    .about-badge {
+        width: 120px;
+        height: 120px;
+        bottom: 20px;
+        right: 20px;
+    }
+    
+    .about-badge .number {
+        font-size: 36px;
+    }
+}
+
+@media (max-width: 480px) {
+    .about-image {
+        min-height: 300px;
+        max-height: 400px;
+    }
+    
+    .about-badge {
+        width: 100px;
+        height: 100px;
+        bottom: 15px;
+        right: 15px;
+    }
+    
+    .about-badge .number {
+        font-size: 28px;
+    }
+    
+    .about-badge .text {
+        font-size: 10px;
+    }
 }
